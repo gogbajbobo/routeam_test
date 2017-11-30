@@ -234,7 +234,7 @@
         
     }
     
-    NSLog(@"eventObject %@", eventObject);
+//    NSLog(@"eventObject %@", eventObject);
     
 }
 
