@@ -27,4 +27,35 @@
 }
 
 
+#pragma mark - class methods
+
++ (void)requestEventsData {
+    
+    [self getDataWithCompletionHandler:^(BOOL success, NSDictionary *data) {
+        
+        if (!success) return;
+        [self handleEventsData:data];
+        
+    }];
+    
+}
+
++ (void)getDataWithCompletionHandler:(void (^)(BOOL success, NSDictionary *data))completionHandler {
+    
+    NSDictionary *returnData = [self eventsData];
+    BOOL success = YES;
+    
+    completionHandler(success, returnData);
+    
+}
+
++ (NSDictionary *)eventsData {
+    
+    return @{};
+    
+}
+
++ (void)handleEventsData:(NSDictionary *)eventsData {
+    
+}
 @end
