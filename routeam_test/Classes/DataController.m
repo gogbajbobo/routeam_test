@@ -180,7 +180,7 @@
     NSString *idString = @(eventId).stringValue;
     NSDate *startDate = [NSDate dateWithTimeIntervalSinceNow:(eventId * 24 * 3600)];
     NSDate *finishDate = [NSDate dateWithTimeIntervalSinceNow:(eventId * 24 * 3600 + 12 * 3600)];
-    double completion = eventId / 10;
+    double completion = (double)eventId / 10;
     EventType type = eventId % 3;
 
     NSDictionary *event = @{@"eventId": @(eventId),
