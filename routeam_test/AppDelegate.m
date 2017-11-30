@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 
+#import "DataController.h"
+
+
 @interface AppDelegate ()
 
 @end
@@ -16,8 +19,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+
+    [DataController sharedController];
+    
     return YES;
+    
 }
 
 
