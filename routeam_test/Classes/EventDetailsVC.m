@@ -8,6 +8,9 @@
 
 #import "EventDetailsVC.h"
 
+#import "ParticipantsTVC.h"
+
+
 @interface EventDetailsVC ()
 
 @property (weak, nonatomic) IBOutlet UILabel *name;
@@ -24,6 +27,10 @@
 @implementation EventDetailsVC
 
 - (IBAction)participantsButtonPressed:(id)sender {
+    
+    [self performSegueWithIdentifier:@"showParticipants"
+                              sender:sender];
+    
 }
 
 - (void)showEventData {
@@ -77,6 +84,12 @@
 #pragma mark - Navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"showParticipants"] &&
+        [segue.destinationViewController isKindOfClass:[ParticipantsTVC class]]) {
+        
+    }
+    
 }
 
 @end

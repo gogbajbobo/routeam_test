@@ -22,6 +22,7 @@
 		2CBD48351FD01AF700C9BCF2 /* Participant+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD48311FD01AF700C9BCF2 /* Participant+CoreDataProperties.m */; };
 		2CBD483A1FD0591000C9BCF2 /* EventsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD48391FD0591000C9BCF2 /* EventsTVC.m */; };
 		2CBD483D1FD0808400C9BCF2 /* EventDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD483C1FD0808400C9BCF2 /* EventDetailsVC.m */; };
+		2CBD48401FD089C900C9BCF2 /* ParticipantsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD483F1FD089C900C9BCF2 /* ParticipantsTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		2CBD48391FD0591000C9BCF2 /* EventsTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventsTVC.m; sourceTree = "<group>"; };
 		2CBD483B1FD0808400C9BCF2 /* EventDetailsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventDetailsVC.h; sourceTree = "<group>"; };
 		2CBD483C1FD0808400C9BCF2 /* EventDetailsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventDetailsVC.m; sourceTree = "<group>"; };
+		2CBD483E1FD089C900C9BCF2 /* ParticipantsTVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParticipantsTVC.h; sourceTree = "<group>"; };
+		2CBD483F1FD089C900C9BCF2 /* ParticipantsTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParticipantsTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +182,8 @@
 				2CBD48391FD0591000C9BCF2 /* EventsTVC.m */,
 				2CBD483B1FD0808400C9BCF2 /* EventDetailsVC.h */,
 				2CBD483C1FD0808400C9BCF2 /* EventDetailsVC.m */,
+				2CBD483E1FD089C900C9BCF2 /* ParticipantsTVC.h */,
+				2CBD483F1FD089C900C9BCF2 /* ParticipantsTVC.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -317,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CBD483D1FD0808400C9BCF2 /* EventDetailsVC.m in Sources */,
+				2CBD48401FD089C900C9BCF2 /* ParticipantsTVC.m in Sources */,
 				2CBD48351FD01AF700C9BCF2 /* Participant+CoreDataProperties.m in Sources */,
 				2CBD48341FD01AF700C9BCF2 /* Participant+CoreDataClass.m in Sources */,
 				2CBD47801FCFF14B00C9BCF2 /* main.m in Sources */,
