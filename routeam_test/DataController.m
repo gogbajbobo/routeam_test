@@ -176,15 +176,15 @@
     NSString *idString = @(eventId).stringValue;
     NSDate *startDate = [NSDate dateWithTimeIntervalSinceNow:(eventId * 12 * 3600)];
     NSDate *finishDate = [NSDate dateWithTimeIntervalSinceNow:(eventId * 24 * 3600)];
-    NSNumber *completion = @(10 * eventId);
-    EventType type = 3 % (eventId + 1);
+    NSUInteger completion = 10 * eventId;
+    EventType type = eventId % 3;
 
     NSDictionary *event = @{@"eventId": @(eventId),
                             @"name": [@"Event #" stringByAppendingString:idString],
                             @"startDate": startDate,
                             @"finishDate": finishDate,
                             @"info": [NSString stringWithFormat:@"Event info #%@", idString],
-                            @"completion": completion,
+                            @"completion": @(completion),
                             @"type": @(type)
                             };
     
@@ -229,6 +229,8 @@
                        forKey:attribute];
         
     }
+    
+    NSLog(@"eventObject %@", eventObject);
     
 }
 
