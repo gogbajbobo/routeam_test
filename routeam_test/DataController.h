@@ -10,4 +10,7 @@
 
 @interface DataController : NSObject
 
++ (instancetype)sharedController;
+
+
 @end

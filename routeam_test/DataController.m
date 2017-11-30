@@ -10,4 +10,21 @@
 
 @implementation DataController
 
+
+#pragma mark - singleton
+
++ (instancetype)sharedController {
+
+    static dispatch_once_t pred = 0;
+    __strong static id _sharedInstance = nil;
+    
+    dispatch_once(&pred, ^{
+        _sharedInstance = [[self alloc] init];
+    });
+    
+    return _sharedInstance;
+
+}
+
+
 @end
