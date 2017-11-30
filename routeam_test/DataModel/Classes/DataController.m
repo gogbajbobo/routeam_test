@@ -10,7 +10,7 @@
 
 #import <CoreData/CoreData.h>
 #import <UIKit/UIKit.h>
-#import "DataModel/DataModel.h"
+#import "DataModel.h"
 
 
 @interface DataController()
@@ -108,6 +108,10 @@
 - (void)documentReady:(UIManagedDocument *)document {
     
     self.document = document;
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"documentReady"
+                                                        object:self.document];
+    
     [DataController checkEventsData];
     
 }

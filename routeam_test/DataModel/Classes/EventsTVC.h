@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  EventsTVC.h
 //  routeam_test
 //
 //  Created by Maxim Grigoriev on 30/11/2017.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface EventsTVC : UITableViewController
 
 @end
-
