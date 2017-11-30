@@ -12,6 +12,8 @@
 #import "DataModel.h"
 #import "DataController.h"
 
+#import "EventDetailsVC.h"
+
 
 @interface EventsTVC () <NSFetchedResultsControllerDelegate>
 
@@ -120,6 +122,13 @@
     
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [self performSegueWithIdentifier:@"showEventDetails"
+                              sender:indexPath];
+    
+}
+
 #pragma mark - NSFetchedResultsController delegate
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
@@ -131,6 +140,17 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 
+    if ([segue.identifier isEqualToString:@"showEventDetails"] &&
+        [segue.destinationViewController isKindOfClass:[EventDetailsVC class]] &&
+        [sender isKindOfClass:[NSIndexPath class]]) {
+        
+        NSIndexPath *indexPath = (NSIndexPath *)sender;
+        Event *event = [self.resultsController objectAtIndexPath:indexPath];
+        EventDetailsVC *eventDetailsVC = (EventDetailsVC *)segue.destinationViewController;
+        eventDetailsVC.event = event;
+        
+    }
+    
 }
 
 @end

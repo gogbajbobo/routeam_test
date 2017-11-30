@@ -21,6 +21,7 @@
 		2CBD48341FD01AF700C9BCF2 /* Participant+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD482F1FD01AF700C9BCF2 /* Participant+CoreDataClass.m */; };
 		2CBD48351FD01AF700C9BCF2 /* Participant+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD48311FD01AF700C9BCF2 /* Participant+CoreDataProperties.m */; };
 		2CBD483A1FD0591000C9BCF2 /* EventsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD48391FD0591000C9BCF2 /* EventsTVC.m */; };
+		2CBD483D1FD0808400C9BCF2 /* EventDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD483C1FD0808400C9BCF2 /* EventDetailsVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		2CBD48361FD01B2C00C9BCF2 /* DataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
 		2CBD48381FD0591000C9BCF2 /* EventsTVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventsTVC.h; sourceTree = "<group>"; };
 		2CBD48391FD0591000C9BCF2 /* EventsTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventsTVC.m; sourceTree = "<group>"; };
+		2CBD483B1FD0808400C9BCF2 /* EventDetailsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EventDetailsVC.h; sourceTree = "<group>"; };
+		2CBD483C1FD0808400C9BCF2 /* EventDetailsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventDetailsVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +177,8 @@
 				2CBD47A71FCFF34900C9BCF2 /* DataController.m */,
 				2CBD48381FD0591000C9BCF2 /* EventsTVC.h */,
 				2CBD48391FD0591000C9BCF2 /* EventsTVC.m */,
+				2CBD483B1FD0808400C9BCF2 /* EventDetailsVC.h */,
+				2CBD483C1FD0808400C9BCF2 /* EventDetailsVC.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -311,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CBD483D1FD0808400C9BCF2 /* EventDetailsVC.m in Sources */,
 				2CBD48351FD01AF700C9BCF2 /* Participant+CoreDataProperties.m in Sources */,
 				2CBD48341FD01AF700C9BCF2 /* Participant+CoreDataClass.m in Sources */,
 				2CBD47801FCFF14B00C9BCF2 /* main.m in Sources */,
