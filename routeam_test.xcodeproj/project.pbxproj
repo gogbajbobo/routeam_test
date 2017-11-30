@@ -17,6 +17,10 @@
 		2CBD47951FCFF14B00C9BCF2 /* routeam_testUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD47941FCFF14B00C9BCF2 /* routeam_testUITests.m */; };
 		2CBD47A51FCFF16D00C9BCF2 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD47A31FCFF16D00C9BCF2 /* Model.xcdatamodeld */; };
 		2CBD47A81FCFF34900C9BCF2 /* DataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD47A71FCFF34900C9BCF2 /* DataController.m */; };
+		2CBD48321FD01AF700C9BCF2 /* Event+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD482B1FD01AF700C9BCF2 /* Event+CoreDataClass.m */; };
+		2CBD48331FD01AF700C9BCF2 /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD482D1FD01AF700C9BCF2 /* Event+CoreDataProperties.m */; };
+		2CBD48341FD01AF700C9BCF2 /* Participant+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD482F1FD01AF700C9BCF2 /* Participant+CoreDataClass.m */; };
+		2CBD48351FD01AF700C9BCF2 /* Participant+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD48311FD01AF700C9BCF2 /* Participant+CoreDataProperties.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,15 @@
 		2CBD47A41FCFF16D00C9BCF2 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		2CBD47A61FCFF34900C9BCF2 /* DataController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataController.h; sourceTree = "<group>"; };
 		2CBD47A71FCFF34900C9BCF2 /* DataController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataController.m; sourceTree = "<group>"; };
+		2CBD482A1FD01AF700C9BCF2 /* Event+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Event+CoreDataClass.h"; sourceTree = "<group>"; };
+		2CBD482B1FD01AF700C9BCF2 /* Event+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Event+CoreDataClass.m"; sourceTree = "<group>"; };
+		2CBD482C1FD01AF700C9BCF2 /* Event+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Event+CoreDataProperties.h"; sourceTree = "<group>"; };
+		2CBD482D1FD01AF700C9BCF2 /* Event+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Event+CoreDataProperties.m"; sourceTree = "<group>"; };
+		2CBD482E1FD01AF700C9BCF2 /* Participant+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Participant+CoreDataClass.h"; sourceTree = "<group>"; };
+		2CBD482F1FD01AF700C9BCF2 /* Participant+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Participant+CoreDataClass.m"; sourceTree = "<group>"; };
+		2CBD48301FD01AF700C9BCF2 /* Participant+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Participant+CoreDataProperties.h"; sourceTree = "<group>"; };
+		2CBD48311FD01AF700C9BCF2 /* Participant+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Participant+CoreDataProperties.m"; sourceTree = "<group>"; };
+		2CBD48361FD01B2C00C9BCF2 /* DataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +156,15 @@
 		2CBD47A21FCFF15B00C9BCF2 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				2CBD48361FD01B2C00C9BCF2 /* DataModel.h */,
+				2CBD482A1FD01AF700C9BCF2 /* Event+CoreDataClass.h */,
+				2CBD482B1FD01AF700C9BCF2 /* Event+CoreDataClass.m */,
+				2CBD482C1FD01AF700C9BCF2 /* Event+CoreDataProperties.h */,
+				2CBD482D1FD01AF700C9BCF2 /* Event+CoreDataProperties.m */,
+				2CBD482E1FD01AF700C9BCF2 /* Participant+CoreDataClass.h */,
+				2CBD482F1FD01AF700C9BCF2 /* Participant+CoreDataClass.m */,
+				2CBD48301FD01AF700C9BCF2 /* Participant+CoreDataProperties.h */,
+				2CBD48311FD01AF700C9BCF2 /* Participant+CoreDataProperties.m */,
 				2CBD47A31FCFF16D00C9BCF2 /* Model.xcdatamodeld */,
 			);
 			path = DataModel;
@@ -282,7 +304,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CBD47751FCFF14B00C9BCF2 /* ViewController.m in Sources */,
+				2CBD48351FD01AF700C9BCF2 /* Participant+CoreDataProperties.m in Sources */,
+				2CBD48341FD01AF700C9BCF2 /* Participant+CoreDataClass.m in Sources */,
 				2CBD47801FCFF14B00C9BCF2 /* main.m in Sources */,
+				2CBD48321FD01AF700C9BCF2 /* Event+CoreDataClass.m in Sources */,
+				2CBD48331FD01AF700C9BCF2 /* Event+CoreDataProperties.m in Sources */,
 				2CBD47721FCFF14B00C9BCF2 /* AppDelegate.m in Sources */,
 				2CBD47A81FCFF34900C9BCF2 /* DataController.m in Sources */,
 				2CBD47A51FCFF16D00C9BCF2 /* Model.xcdatamodeld in Sources */,
