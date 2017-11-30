@@ -122,6 +122,7 @@
 		2CBD476F1FCFF14B00C9BCF2 /* routeam_test */ = {
 			isa = PBXGroup;
 			children = (
+				2CBD48371FD058E800C9BCF2 /* Classes */,
 				2CBD47A21FCFF15B00C9BCF2 /* DataModel */,
 				2CBD47701FCFF14B00C9BCF2 /* AppDelegate.h */,
 				2CBD47711FCFF14B00C9BCF2 /* AppDelegate.m */,
@@ -155,7 +156,6 @@
 		2CBD47A21FCFF15B00C9BCF2 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				2CBD48371FD058E800C9BCF2 /* Classes */,
 				2CBD48361FD01B2C00C9BCF2 /* DataModel.h */,
 				2CBD482A1FD01AF700C9BCF2 /* Event+CoreDataClass.h */,
 				2CBD482B1FD01AF700C9BCF2 /* Event+CoreDataClass.m */,
