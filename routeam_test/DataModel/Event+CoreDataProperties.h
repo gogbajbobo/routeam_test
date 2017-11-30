@@ -21,13 +21,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<Event *> *)fetchRequest;
 
-@property (nonatomic) double completion;
+@property (nullable, nonatomic, copy) NSNumber *completion;
 @property (nullable, nonatomic, copy) NSDate *finishDate;
-@property (nonatomic) int64_t id;
+@property (nullable, nonatomic, copy) NSNumber *eventId;
 @property (nullable, nonatomic, copy) NSString *info;
 @property (nullable, nonatomic, copy) NSString *name;
 @property (nullable, nonatomic, copy) NSDate *startDate;
-@property (nonatomic) int16_t type;
+@property (nullable, nonatomic, copy) NSNumber *type;
 @property (nullable, nonatomic, retain) NSSet<Participant *> *participants;
 
 @end

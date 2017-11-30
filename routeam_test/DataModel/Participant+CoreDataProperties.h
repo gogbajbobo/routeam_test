@@ -16,10 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<Participant *> *)fetchRequest;
 
-@property (nonatomic) double completion;
-@property (nonatomic) int64_t id;
+@property (nullable, nonatomic, copy) NSNumber *completion;
+@property (nullable, nonatomic, copy) NSNumber *participantId;
 @property (nullable, nonatomic, copy) NSString *name;
-@property (nonatomic) double plan;
+@property (nullable, nonatomic, copy) NSNumber *plan;
 @property (nullable, nonatomic, retain) Event *event;
 
 @end

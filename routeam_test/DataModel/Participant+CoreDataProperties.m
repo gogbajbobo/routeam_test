@@ -16,7 +16,7 @@
 }
 
 @dynamic completion;
-@dynamic id;
+@dynamic participantId;
 @dynamic name;
 @dynamic plan;
 @dynamic event;

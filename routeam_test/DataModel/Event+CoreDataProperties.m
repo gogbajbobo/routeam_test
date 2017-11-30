@@ -17,7 +17,7 @@
 
 @dynamic completion;
 @dynamic finishDate;
-@dynamic id;
+@dynamic eventId;
 @dynamic info;
 @dynamic name;
 @dynamic startDate;
