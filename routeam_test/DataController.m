@@ -133,6 +133,8 @@
     
     if (!eventsCount) {
         [self requestEventsData];
+    } else {
+        NSLog(@"eventsCount %@", @(eventsCount));
     }
     
 }
@@ -172,16 +174,16 @@
 + (NSDictionary *)eventWithId:(NSUInteger)eventId {
     
     NSString *idString = @(eventId).stringValue;
-    NSDate *startDate = [NSDate dateWithTimeIntervalSinceNow:-(eventId * 24 * 3600)];
-    NSDate *finishDate = [NSDate dateWithTimeIntervalSinceNow:-(eventId * 12 * 3600)];
+    NSDate *startDate = [NSDate dateWithTimeIntervalSinceNow:(eventId * 12 * 3600)];
+    NSDate *finishDate = [NSDate dateWithTimeIntervalSinceNow:(eventId * 24 * 3600)];
     NSNumber *completion = @(10 * eventId);
     EventType type = 3 % (eventId + 1);
 
-    NSDictionary *event = @{@"id": @(eventId),
-                            @"name": [@"Event " stringByAppendingString:idString],
+    NSDictionary *event = @{@"eventId": @(eventId),
+                            @"name": [@"Event #" stringByAppendingString:idString],
                             @"startDate": startDate,
                             @"finishDate": finishDate,
-                            @"info": [NSString stringWithFormat:@"Event %@ info", idString],
+                            @"info": [NSString stringWithFormat:@"Event info #%@", idString],
                             @"completion": completion,
                             @"type": @(type)
                             };
@@ -208,23 +210,52 @@
 
 + (void)handleEvent:(NSDictionary *)event {
 
+    NSNumber *eventId = event[@"eventId"];
+    
+    if (!eventId) return;
+    
+    Event *eventObject = [self eventObjectWithId:eventId];
+    
     NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass([Event class])
                                               inManagedObjectContext:[self context]];
-    
+
     NSArray *attributes = entity.attributesByName.allKeys;
 
     for (NSString *attribute in attributes) {
         
         if (!event[attribute]) continue;
         
-        NSAttributeDescription *attributeDescription = entity.attributesByName[attribute];
-        NSString *attributeClass = attributeDescription.attributeValueClassName;
-        
-        NSLog(@"attributeClass %@", attributeClass);
-        NSLog(@"event[attribute] %@", event[attribute]);
-        
+        [eventObject setValue:event[attribute]
+                       forKey:attribute];
         
     }
+    
+}
+
++ (Event *)eventObjectWithId:(NSNumber *)eventId {
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass([Event class])];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"eventId == %@", eventId];
+    request.predicate = predicate;
+    
+    NSError *error = nil;
+
+    Event *eventObject = [[self context] executeFetchRequest:request
+                                                       error:&error].lastObject;
+    
+    if (!eventObject) eventObject = [self newEventObjectWithId:eventId];
+    
+    return eventObject;
+    
+}
+
++ (Event *)newEventObjectWithId:(NSNumber *)eventId {
+    
+    Event *eventObject = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Event class])
+                                                       inManagedObjectContext:[self context]];
+    eventObject.eventId = eventId;
+    
+    return eventObject;
     
 }
 
