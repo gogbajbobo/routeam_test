@@ -33,7 +33,13 @@
                             <outlet property="delegate" destination="qwM-HQ-ipv" id="tRj-ZM-1T2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="zaf-5V-E8N"/>
+                    <navigationItem key="navigationItem" id="zaf-5V-E8N">
+                        <barButtonItem key="rightBarButtonItem" image="icons8-settings.png" id="Ih4-LG-QAb">
+                            <connections>
+                                <segue destination="7kZ-vZ-jVb" kind="show" identifier="showSettings" id="WqY-Al-5HU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="GQi-fI-4dS" kind="show" identifier="showEventDetails" id="Bse-ad-UbJ"/>
                     </connections>
@@ -41,6 +47,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9GG-PP-Nzr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="69.375" y="-72.887323943661968"/>
+        </scene>
+        <!--SettingsTVC-->
+        <scene sceneID="A1t-wr-Oy3">
+            <objects>
+                <tableViewController id="7kZ-vZ-jVb" customClass="SettingsTVC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5sZ-W8-30m">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="settingCell" id="rkA-hG-I4e">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rkA-hG-I4e" id="D88-Dn-hwD">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="7kZ-vZ-jVb" id="Cff-yp-1mB"/>
+                            <outlet property="delegate" destination="7kZ-vZ-jVb" id="HfJ-TR-6Gi"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z6H-Zv-idV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="879" y="-794"/>
         </scene>
         <!--Event DetailsVC-->
         <scene sceneID="vPt-lA-ODO">
@@ -143,7 +177,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="participantsCell" id="Lft-Ng-QX5">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="participantCell" id="Lft-Ng-QX5">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lft-Ng-QX5" id="xfa-4f-Y1h">
@@ -181,4 +215,7 @@
             <point key="canvasLocation" x="-739" y="-73"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-settings.png" width="32" height="32"/>
+    </resources>
 </document>
