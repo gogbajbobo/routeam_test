@@ -29,6 +29,7 @@
 		2CBD48551FD1671C00C9BCF2 /* SortOptionsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD48541FD1671C00C9BCF2 /* SortOptionsTVC.m */; };
 		2CBD48661FD16A1900C9BCF2 /* desc.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CBD48641FD16A1800C9BCF2 /* desc.png */; };
 		2CBD48671FD16A1900C9BCF2 /* acs.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CBD48651FD16A1900C9BCF2 /* acs.png */; };
+		2CBD486A1FD16B0E00C9BCF2 /* SettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD48691FD16B0E00C9BCF2 /* SettingsController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,8 @@
 		2CBD48541FD1671C00C9BCF2 /* SortOptionsTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SortOptionsTVC.m; sourceTree = "<group>"; };
 		2CBD48641FD16A1800C9BCF2 /* desc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = desc.png; sourceTree = "<group>"; };
 		2CBD48651FD16A1900C9BCF2 /* acs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = acs.png; sourceTree = "<group>"; };
+		2CBD48681FD16B0E00C9BCF2 /* SettingsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsController.h; sourceTree = "<group>"; };
+		2CBD48691FD16B0E00C9BCF2 /* SettingsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +197,8 @@
 			children = (
 				2CBD47A61FCFF34900C9BCF2 /* DataController.h */,
 				2CBD47A71FCFF34900C9BCF2 /* DataController.m */,
+				2CBD48681FD16B0E00C9BCF2 /* SettingsController.h */,
+				2CBD48691FD16B0E00C9BCF2 /* SettingsController.m */,
 				2CBD48381FD0591000C9BCF2 /* EventsTVC.h */,
 				2CBD48391FD0591000C9BCF2 /* EventsTVC.m */,
 				2CBD483B1FD0808400C9BCF2 /* EventDetailsVC.h */,
@@ -368,6 +373,7 @@
 				2CBD48331FD01AF700C9BCF2 /* Event+CoreDataProperties.m in Sources */,
 				2CBD47721FCFF14B00C9BCF2 /* AppDelegate.m in Sources */,
 				2CBD47A81FCFF34900C9BCF2 /* DataController.m in Sources */,
+				2CBD486A1FD16B0E00C9BCF2 /* SettingsController.m in Sources */,
 				2CBD483A1FD0591000C9BCF2 /* EventsTVC.m in Sources */,
 				2CBD47A51FCFF16D00C9BCF2 /* Model.xcdatamodeld in Sources */,
 			);
