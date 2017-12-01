@@ -120,6 +120,8 @@
 
     cell.textLabel.text = event.name;
     
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
     return cell;
     
 }
