@@ -11,12 +11,12 @@
 #define SORT_OPTIONS @"sortOptions"
 #define FILTER_OPTIONS @"filterOptions"
 
-#define SORT_TYPE @"type"
-#define SORT_NAME @"name"
-#define SORT_STARTDATE @"startDate"
-#define SORT_FINISHDATE @"finishDate"
-#define SORT_COMPLETION @"completion"
-#define CURRENT_SORT @"current"
+#define SORT_TYPE @"Type"
+#define SORT_NAME @"Name"
+#define SORT_STARTDATE @"Start date"
+#define SORT_FINISHDATE @"Finish date"
+#define SORT_COMPLETION @"Completion"
+#define CURRENT_SORT @"Current"
 
 #define SORT_ACS @"acs"
 #define SORT_DESC @"desc"

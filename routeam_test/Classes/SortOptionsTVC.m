@@ -63,7 +63,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"sortOptionCell"
                                                             forIndexPath:indexPath];
     
-    cell.textLabel.text = [self cellTitleForIndexPath:indexPath];
+    cell.textLabel.text = [SettingsController sortKeys][indexPath.row];
     
     return cell;
     
@@ -71,36 +71,6 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
     [cell setSelected:(indexPath.row == [self currentSortOptionIndex])];
-}
-
-- (NSString *)cellTitleForIndexPath:(NSIndexPath *)indexPath {
-    
-    switch (indexPath.row) {
-        case 0:
-            return @"Type";
-            break;
-
-        case 1:
-            return @"Name";
-            break;
-
-        case 2:
-            return @"Start date";
-            break;
-
-        case 3:
-            return @"Finish date";
-            break;
-
-        case 4:
-            return @"Completion";
-            break;
-
-        default:
-            return nil;
-            break;
-    }
-    
 }
 
 
