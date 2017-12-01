@@ -12,12 +12,14 @@
 #import "DataModel.h"
 #import "DataController.h"
 
+#import "SpinnerView.h"
 #import "EventDetailsVC.h"
 #import "SettingsTVC.h"
 
 
 @interface EventsTVC () <NSFetchedResultsControllerDelegate>
 
+@property (nonatomic, strong) SpinnerView *spinner;
 @property (nonatomic, strong) NSFetchedResultsController *resultsController;
 @property (nonatomic, strong) NSManagedObjectContext *context;
 
@@ -72,6 +74,7 @@
         UIManagedDocument *document = (UIManagedDocument *)notification.object;
         self.context = document.managedObjectContext;
         [self fetchEvents];
+        [self.spinner removeFromSuperview];
         
     }
     
@@ -83,6 +86,14 @@
                                              selector:@selector(documentReady:)
                                                  name:@"documentReady"
                                                object:nil];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    self.spinner = [SpinnerView spinnerViewWithFrame:self.view.frame];
+    [self.view addSubview:self.spinner];
     
 }
 
