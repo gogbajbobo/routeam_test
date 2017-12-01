@@ -73,7 +73,10 @@
 }
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    self.title = @"Event details";
+    
 }
 
 - (void)didReceiveMemoryWarning {

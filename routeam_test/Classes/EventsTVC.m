@@ -13,6 +13,7 @@
 #import "DataController.h"
 
 #import "EventDetailsVC.h"
+#import "SettingsTVC.h"
 
 
 @interface EventsTVC () <NSFetchedResultsControllerDelegate>
@@ -89,6 +90,7 @@
     
     [super viewDidLoad];
     [self subscribeToNotifications];
+    self.title = @"Events";
     
 }
 
@@ -150,7 +152,12 @@
         eventDetailsVC.event = event;
         
     }
-    
+
+    if ([segue.identifier isEqualToString:@"showSettings"] &&
+        [segue.destinationViewController isKindOfClass:[SettingsTVC class]]) {
+                
+    }
+
 }
 
 @end
