@@ -72,12 +72,51 @@
 
     [cell setSelected:(indexPath.row == [self currentSortOptionIndex])];
 
-    NSString *sortOrder = [self sortOptions][[SettingsController sortKeys][indexPath.row]];
+    NSString *sortOrder = [self sortOrderForIndexPath:indexPath];
     UIImage *sortImage = [[UIImage imageNamed:sortOrder] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     UIImageView *accessoryView = [[UIImageView alloc] initWithImage:sortImage];
     accessoryView.tintColor = cell.selected ? [UIColor blueColor] : [UIColor lightGrayColor];
     
     cell.accessoryView = accessoryView;
+    
+}
+
+- (NSString *)sortOrderForIndexPath:(NSIndexPath *)indexPath {
+    return [self sortOptions][[SettingsController sortKeys][indexPath.row]];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if ([self currentSortOptionIndex] == indexPath.row) {
+        
+        NSString *sortOrder = [self sortOrderForIndexPath:indexPath];
+        
+        if ([sortOrder isEqualToString:SORT_ACS]) {
+            sortOrder = SORT_DESC;
+        } else if ([sortOrder isEqualToString:SORT_DESC]) {
+            sortOrder = SORT_ACS;
+        }
+
+        NSDictionary *newSortSetting = @{@"option": SORT_OPTIONS,
+                                         @"setting": [SettingsController sortKeys][indexPath.row],
+                                         @"value": sortOrder
+                                         };
+        
+        [SettingsController setNewSettingValue:newSortSetting];
+        
+        [self.tableView reloadRowsAtIndexPaths:@[indexPath]
+                              withRowAnimation:UITableViewRowAnimationNone];
+        
+    } else {
+        
+        NSDictionary *newCurrentSortSetting = @{@"option": SORT_OPTIONS,
+                                                @"setting": CURRENT_SORT,
+                                                @"value": [SettingsController sortKeys][indexPath.row]
+                                                };
+
+        [SettingsController setNewSettingValue:newCurrentSortSetting];
+
+    }
     
 }
 
