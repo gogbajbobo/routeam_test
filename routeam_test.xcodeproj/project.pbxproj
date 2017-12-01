@@ -195,10 +195,36 @@
 		2CBD48371FD058E800C9BCF2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				2CBD486B1FD172E800C9BCF2 /* Controllers */,
+				2CBD486C1FD172FF00C9BCF2 /* Views */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		2CBD48411FD143BA00C9BCF2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2CBD484B1FD1478800C9BCF2 /* icons8-settings.png */,
+				2CBD48651FD16A1900C9BCF2 /* acs.png */,
+				2CBD48641FD16A1800C9BCF2 /* desc.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2CBD486B1FD172E800C9BCF2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				2CBD47A61FCFF34900C9BCF2 /* DataController.h */,
 				2CBD47A71FCFF34900C9BCF2 /* DataController.m */,
 				2CBD48681FD16B0E00C9BCF2 /* SettingsController.h */,
 				2CBD48691FD16B0E00C9BCF2 /* SettingsController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2CBD486C1FD172FF00C9BCF2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
 				2CBD48381FD0591000C9BCF2 /* EventsTVC.h */,
 				2CBD48391FD0591000C9BCF2 /* EventsTVC.m */,
 				2CBD483B1FD0808400C9BCF2 /* EventDetailsVC.h */,
@@ -212,17 +238,7 @@
 				2CBD48501FD148D700C9BCF2 /* FilterOptionsVC.h */,
 				2CBD48511FD148D700C9BCF2 /* FilterOptionsVC.m */,
 			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		2CBD48411FD143BA00C9BCF2 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				2CBD484B1FD1478800C9BCF2 /* icons8-settings.png */,
-				2CBD48651FD16A1900C9BCF2 /* acs.png */,
-				2CBD48641FD16A1800C9BCF2 /* desc.png */,
-			);
-			path = Resources;
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
