@@ -24,6 +24,7 @@
 		2CBD483D1FD0808400C9BCF2 /* EventDetailsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD483C1FD0808400C9BCF2 /* EventDetailsVC.m */; };
 		2CBD48401FD089C900C9BCF2 /* ParticipantsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD483F1FD089C900C9BCF2 /* ParticipantsTVC.m */; };
 		2CBD484A1FD1450400C9BCF2 /* SettingsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD48491FD1450400C9BCF2 /* SettingsTVC.m */; };
+		2CBD484C1FD1478800C9BCF2 /* icons8-settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CBD484B1FD1478800C9BCF2 /* icons8-settings.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		2CBD483F1FD089C900C9BCF2 /* ParticipantsTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParticipantsTVC.m; sourceTree = "<group>"; };
 		2CBD48481FD1450400C9BCF2 /* SettingsTVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsTVC.h; sourceTree = "<group>"; };
 		2CBD48491FD1450400C9BCF2 /* SettingsTVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsTVC.m; sourceTree = "<group>"; };
+		2CBD484B1FD1478800C9BCF2 /* icons8-settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-settings.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 		2CBD48411FD143BA00C9BCF2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2CBD484B1FD1478800C9BCF2 /* icons8-settings.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CBD484C1FD1478800C9BCF2 /* icons8-settings.png in Resources */,
 				2CBD477D1FCFF14B00C9BCF2 /* LaunchScreen.storyboard in Resources */,
 				2CBD477A1FCFF14B00C9BCF2 /* Assets.xcassets in Resources */,
 				2CBD47781FCFF14B00C9BCF2 /* Main.storyboard in Resources */,
