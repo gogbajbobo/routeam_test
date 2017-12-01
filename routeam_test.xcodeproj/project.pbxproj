@@ -30,6 +30,7 @@
 		2CBD48661FD16A1900C9BCF2 /* desc.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CBD48641FD16A1800C9BCF2 /* desc.png */; };
 		2CBD48671FD16A1900C9BCF2 /* acs.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CBD48651FD16A1900C9BCF2 /* acs.png */; };
 		2CBD486A1FD16B0E00C9BCF2 /* SettingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD48691FD16B0E00C9BCF2 /* SettingsController.m */; };
+		2CBD486F1FD1734B00C9BCF2 /* SpinnerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD486E1FD1734B00C9BCF2 /* SpinnerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,8 @@
 		2CBD48651FD16A1900C9BCF2 /* acs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = acs.png; sourceTree = "<group>"; };
 		2CBD48681FD16B0E00C9BCF2 /* SettingsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsController.h; sourceTree = "<group>"; };
 		2CBD48691FD16B0E00C9BCF2 /* SettingsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsController.m; sourceTree = "<group>"; };
+		2CBD486D1FD1734B00C9BCF2 /* SpinnerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpinnerView.h; sourceTree = "<group>"; };
+		2CBD486E1FD1734B00C9BCF2 /* SpinnerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpinnerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +228,8 @@
 		2CBD486C1FD172FF00C9BCF2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2CBD486D1FD1734B00C9BCF2 /* SpinnerView.h */,
+				2CBD486E1FD1734B00C9BCF2 /* SpinnerView.m */,
 				2CBD48381FD0591000C9BCF2 /* EventsTVC.h */,
 				2CBD48391FD0591000C9BCF2 /* EventsTVC.m */,
 				2CBD483B1FD0808400C9BCF2 /* EventDetailsVC.h */,
@@ -379,6 +384,7 @@
 			files = (
 				2CBD483D1FD0808400C9BCF2 /* EventDetailsVC.m in Sources */,
 				2CBD48551FD1671C00C9BCF2 /* SortOptionsTVC.m in Sources */,
+				2CBD486F1FD1734B00C9BCF2 /* SpinnerView.m in Sources */,
 				2CBD48521FD148D700C9BCF2 /* FilterOptionsVC.m in Sources */,
 				2CBD48401FD089C900C9BCF2 /* ParticipantsTVC.m in Sources */,
 				2CBD484A1FD1450400C9BCF2 /* SettingsTVC.m in Sources */,
