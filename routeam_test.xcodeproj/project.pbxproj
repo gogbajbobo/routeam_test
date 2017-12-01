@@ -128,6 +128,7 @@
 		2CBD476F1FCFF14B00C9BCF2 /* routeam_test */ = {
 			isa = PBXGroup;
 			children = (
+				2CBD48411FD143BA00C9BCF2 /* Resources */,
 				2CBD48371FD058E800C9BCF2 /* Classes */,
 				2CBD47A21FCFF15B00C9BCF2 /* DataModel */,
 				2CBD47701FCFF14B00C9BCF2 /* AppDelegate.h */,
@@ -191,6 +192,13 @@
 				2CBD48491FD1450400C9BCF2 /* SettingsTVC.m */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		2CBD48411FD143BA00C9BCF2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
