@@ -73,12 +73,40 @@
                     </tableView>
                     <connections>
                         <segue destination="bTf-y5-6RY" kind="show" identifier="showFilterOptions" id="HyS-KV-gsg"/>
-                        <segue destination="GmN-iy-lcl" kind="show" identifier="showSortOptions" id="Dnm-rX-M3D"/>
+                        <segue destination="OoD-wK-FTb" kind="show" identifier="showSortOptions" id="QF4-HH-3cg"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z6H-Zv-idV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="879" y="-794"/>
+            <point key="canvasLocation" x="877.5" y="-794.36619718309862"/>
+        </scene>
+        <!--Sort OptionsTVC-->
+        <scene sceneID="H85-FX-UTd">
+            <objects>
+                <tableViewController id="OoD-wK-FTb" customClass="SortOptionsTVC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9i4-5c-org">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sortOptionCell" id="r7n-89-Fda">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="r7n-89-Fda" id="lfw-Rl-asZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="OoD-wK-FTb" id="5Kh-5u-d7E"/>
+                            <outlet property="delegate" destination="OoD-wK-FTb" id="6Mf-SX-1Ar"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Wy-5F-w0D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1717.5" y="-1488.3802816901409"/>
         </scene>
         <!--Filter OptionsVC-->
         <scene sceneID="wxE-WX-vpZ">
@@ -214,21 +242,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0DZ-7Q-s52" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1721" y="-75"/>
-        </scene>
-        <!--Sort OptionsVC-->
-        <scene sceneID="M1p-VT-v10">
-            <objects>
-                <viewController id="GmN-iy-lcl" customClass="SortOptionsVC" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Oiw-1G-eaf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="XGw-ia-Wwy"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zbC-IN-jNn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1719" y="-1524"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="plF-nC-1N6">
