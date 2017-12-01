@@ -25,8 +25,9 @@
 @interface SettingsController : NSObject
 
 + (NSDictionary *)currentSettings;
-
 + (NSArray *)sortKeys;
+
++ (void)setNewSettingValue:(NSDictionary *)settingDic;
 
 
 @end
