@@ -71,10 +71,29 @@
                             <outlet property="delegate" destination="7kZ-vZ-jVb" id="HfJ-TR-6Gi"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="bTf-y5-6RY" kind="show" identifier="showFilterOptions" id="HyS-KV-gsg"/>
+                        <segue destination="GmN-iy-lcl" kind="show" identifier="showSortOptions" id="Dnm-rX-M3D"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z6H-Zv-idV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="879" y="-794"/>
+        </scene>
+        <!--Filter OptionsVC-->
+        <scene sceneID="wxE-WX-vpZ">
+            <objects>
+                <viewController id="bTf-y5-6RY" customClass="FilterOptionsVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tVG-sV-aik">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="hhQ-sc-5Zz"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="09p-ft-By9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1719" y="-794"/>
         </scene>
         <!--Event DetailsVC-->
         <scene sceneID="vPt-lA-ODO">
@@ -195,6 +214,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0DZ-7Q-s52" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1721" y="-75"/>
+        </scene>
+        <!--Sort OptionsVC-->
+        <scene sceneID="M1p-VT-v10">
+            <objects>
+                <viewController id="GmN-iy-lcl" customClass="SortOptionsVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Oiw-1G-eaf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="XGw-ia-Wwy"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zbC-IN-jNn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1719" y="-1524"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="plF-nC-1N6">

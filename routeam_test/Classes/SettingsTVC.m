@@ -39,10 +39,41 @@
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"settingCell"
                                                             forIndexPath:indexPath];
+    
+    switch (indexPath.row) {
+        case 0:
+            cell.textLabel.text = @"Sort options";
+            break;
+
+        case 1:
+            cell.textLabel.text = @"Filter options";
+            break;
+
+        default:
+            break;
+    }
+    
     return cell;
     
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    switch (indexPath.row) {
+        case 0:
+            [self performSegueWithIdentifier:@"showSortOptions"
+                                      sender:nil];
+            break;
+
+        case 1:
+            [self performSegueWithIdentifier:@"showFilterOptions"
+                                      sender:nil];
+            break;
+
+        default:
+            break;
+    }
+}
 
 
 #pragma mark - Navigation
