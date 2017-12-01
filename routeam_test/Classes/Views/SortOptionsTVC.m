@@ -62,15 +62,23 @@
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"sortOptionCell"
                                                             forIndexPath:indexPath];
-    
-    cell.textLabel.text = [SettingsController sortKeys][indexPath.row];
-    
     return cell;
     
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    cell.textLabel.text = [SettingsController sortKeys][indexPath.row];
+
     [cell setSelected:(indexPath.row == [self currentSortOptionIndex])];
+
+    NSString *sortOrder = [self sortOptions][[SettingsController sortKeys][indexPath.row]];
+    UIImage *sortImage = [[UIImage imageNamed:sortOrder] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    UIImageView *accessoryView = [[UIImageView alloc] initWithImage:sortImage];
+    accessoryView.tintColor = cell.selected ? [UIColor blueColor] : [UIColor lightGrayColor];
+    
+    cell.accessoryView = accessoryView;
+    
 }
 
 
