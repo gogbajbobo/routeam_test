@@ -65,8 +65,6 @@
     
     cell.textLabel.text = [self cellTitleForIndexPath:indexPath];
     
-    [cell setSelected:(indexPath.row == [self currentSortOptionIndex])];
-    
     return cell;
     
 }
