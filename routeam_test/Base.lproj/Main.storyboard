@@ -140,6 +140,9 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nwc-Xn-urb">
                                 <rect key="frame" x="253" y="70" width="51" height="31"/>
+                                <connections>
+                                    <action selector="typeSwitchChanged:" destination="bTf-y5-6RY" eventType="valueChanged" id="agi-tM-6fU"/>
+                                </connections>
                             </switch>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ks2-0Z-LJg">
                                 <rect key="frame" x="35" y="109" width="250" height="29"/>
@@ -151,6 +154,9 @@
                                     <segment title="Sum"/>
                                     <segment title="Names"/>
                                 </segments>
+                                <connections>
+                                    <action selector="typeValueChanged:" destination="bTf-y5-6RY" eventType="valueChanged" id="Pu5-qS-PSG"/>
+                                </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gH-90-scc">
                                 <rect key="frame" x="16" y="150" width="229" height="21"/>
@@ -160,6 +166,9 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gkj-N7-ONH">
                                 <rect key="frame" x="253" y="145" width="51" height="31"/>
+                                <connections>
+                                    <action selector="nameSwitchChanged:" destination="bTf-y5-6RY" eventType="valueChanged" id="QBd-Ek-hVb"/>
+                                </connections>
                             </switch>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pod-Or-4fX">
                                 <rect key="frame" x="35" y="179" width="250" height="30"/>
@@ -169,6 +178,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="nameValueChanged:" destination="bTf-y5-6RY" eventType="editingChanged" id="H6f-VR-VmN"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7un-ab-vNL">
                                 <rect key="frame" x="16" y="222" width="227" height="21"/>
@@ -178,6 +190,9 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZP4-SB-cgU">
                                 <rect key="frame" x="251" y="217" width="51" height="31"/>
+                                <connections>
+                                    <action selector="startDateSwitchChanged:" destination="bTf-y5-6RY" eventType="valueChanged" id="pYl-I4-DRN"/>
+                                </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uas-NV-0sz">
                                 <rect key="frame" x="35" y="251" width="250" height="30"/>
@@ -185,6 +200,9 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="cH8-BL-Ais"/>
                                 </constraints>
                                 <state key="normal" title="Start date filter value"/>
+                                <connections>
+                                    <action selector="startDateFilterPressed:" destination="bTf-y5-6RY" eventType="touchUpInside" id="UC0-ZP-D4i"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finish date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jmr-Xa-Q8p">
                                 <rect key="frame" x="18" y="285" width="227" height="21"/>
@@ -194,6 +212,9 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JYX-zK-Qsm">
                                 <rect key="frame" x="253" y="280" width="51" height="31"/>
+                                <connections>
+                                    <action selector="finishDateSwitchChanged:" destination="bTf-y5-6RY" eventType="valueChanged" id="EPe-Aj-L83"/>
+                                </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P26-zJ-wYB">
                                 <rect key="frame" x="35" y="314" width="250" height="30"/>
@@ -201,6 +222,9 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="x0b-GK-bF3"/>
                                 </constraints>
                                 <state key="normal" title="Finish date filter value"/>
+                                <connections>
+                                    <action selector="finishDateFilterPressed:" destination="bTf-y5-6RY" eventType="touchUpInside" id="bLp-m6-gv6"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completion min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYh-ty-KkR">
                                 <rect key="frame" x="18" y="348" width="227" height="21"/>
@@ -210,12 +234,18 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Oy-Jz-HmL">
                                 <rect key="frame" x="253" y="343" width="51" height="31"/>
+                                <connections>
+                                    <action selector="completionMinSwitchChanged:" destination="bTf-y5-6RY" eventType="valueChanged" id="IdH-Cd-0Ai"/>
+                                </connections>
                             </switch>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="yth-t7-86J">
                                 <rect key="frame" x="33" y="377" width="254" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="o5c-YJ-RkD"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="completionMinChanged:" destination="bTf-y5-6RY" eventType="valueChanged" id="zSs-jI-ALU"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completion max" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5EJ-4G-a3g">
                                 <rect key="frame" x="20" y="419" width="225" height="21"/>
@@ -225,12 +255,18 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bio-kL-hvO">
                                 <rect key="frame" x="253" y="414" width="51" height="31"/>
+                                <connections>
+                                    <action selector="completionMaxSwitchChanged:" destination="bTf-y5-6RY" eventType="valueChanged" id="Hxd-p4-Jh9"/>
+                                </connections>
                             </switch>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="XSi-Az-bNh">
                                 <rect key="frame" x="33" y="448" width="254" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="5rh-S6-QYo"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="completionMaxChanged:" destination="bTf-y5-6RY" eventType="valueChanged" id="VTI-jn-c2R"/>
+                                </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filtered events count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NmT-N6-sCQ">
                                 <rect key="frame" x="20" y="485" width="284" height="21"/>
@@ -299,11 +335,13 @@
                         <outlet property="filteredEventsCountLabel" destination="NmT-N6-sCQ" id="DHh-1S-gzZ"/>
                         <outlet property="finishDateLabel" destination="Jmr-Xa-Q8p" id="Au8-K3-PXG"/>
                         <outlet property="finishDateSwitch" destination="JYX-zK-Qsm" id="YiA-hS-sxe"/>
+                        <outlet property="finishDateValueButton" destination="P26-zJ-wYB" id="HPu-jS-rgn"/>
                         <outlet property="nameLabel" destination="9gH-90-scc" id="ygf-LR-Grc"/>
                         <outlet property="nameSwitch" destination="Gkj-N7-ONH" id="Ucq-AT-1NC"/>
                         <outlet property="nameTextField" destination="Pod-Or-4fX" id="2ZA-rb-Cij"/>
                         <outlet property="startDateLabel" destination="7un-ab-vNL" id="bVO-sG-gxZ"/>
                         <outlet property="startDateSwitch" destination="ZP4-SB-cgU" id="a5R-3s-tGz"/>
+                        <outlet property="startDateValueButton" destination="Uas-NV-0sz" id="uD1-yv-loM"/>
                         <outlet property="typeLabel" destination="ulg-gN-LdP" id="zVv-Rp-BSc"/>
                         <outlet property="typeSegmentedControl" destination="ks2-0Z-LJg" id="uPm-xg-U5g"/>
                         <outlet property="typeSwitch" destination="nwc-Xn-urb" id="SS9-xd-Z9i"/>
