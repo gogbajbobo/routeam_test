@@ -109,7 +109,7 @@
     
     self.document = document;
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"documentReady"
+    [[NSNotificationCenter defaultCenter] postNotificationName:DOCUMENT_READY_NOTIFICATION
                                                         object:self.document];
     
     [DataController checkEventsData];

@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+
+#define DOCUMENT_READY_NOTIFICATION @"documentReady"
+
+
 @interface DataController : NSObject
 
 + (instancetype)sharedController;

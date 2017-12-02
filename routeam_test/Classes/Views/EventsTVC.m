@@ -82,10 +82,13 @@
 
 - (void)subscribeToNotifications {
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(documentReady:)
-                                                 name:@"documentReady"
-                                               object:nil];
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    
+    [nc addObserver:self
+           selector:@selector(documentReady:)
+               name:DOCUMENT_READY_NOTIFICATION
+             object:nil];
+
     
 }
 
