@@ -44,6 +44,7 @@
 
     [super viewDidLoad];
     self.title = @"Sort options";
+    self.tableView.allowsMultipleSelection = NO;
 
 }
 
@@ -105,16 +106,25 @@
         [SettingsController setNewSettingValue:newSortSetting];
         
         [self.tableView reloadRowsAtIndexPaths:@[indexPath]
-                              withRowAnimation:UITableViewRowAnimationNone];
+                              withRowAnimation:UITableViewRowAnimationFade];
         
     } else {
         
+        NSString *sortOption = [SettingsController sortKeys][indexPath.row];
+        NSUInteger oldSortOptionIndex = [self currentSortOptionIndex];
+        
         NSDictionary *newCurrentSortSetting = @{@"option": SORT_OPTIONS,
                                                 @"setting": CURRENT_SORT,
-                                                @"value": [SettingsController sortKeys][indexPath.row]
+                                                @"value": sortOption
                                                 };
 
         [SettingsController setNewSettingValue:newCurrentSortSetting];
+        
+        NSIndexPath *oldIndexPath = [NSIndexPath indexPathForRow:oldSortOptionIndex
+                                                       inSection:0];
+        
+        [self.tableView reloadRowsAtIndexPaths:@[indexPath, oldIndexPath]
+                              withRowAnimation:UITableViewRowAnimationFade];
 
     }
     
