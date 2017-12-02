@@ -177,8 +177,10 @@
 
 + (NSDictionary *)eventWithId:(NSUInteger)eventId {
     
+    NSInteger signedEventId = eventId;
+    
     NSString *idString = @(eventId).stringValue;
-    NSDate *startDate = [NSDate dateWithTimeIntervalSinceNow:(eventId * 24 * 3600)];
+    NSDate *startDate = [NSDate dateWithTimeIntervalSinceNow:-(signedEventId * 24 * 3600)];
     NSDate *finishDate = [NSDate dateWithTimeIntervalSinceNow:(eventId * 24 * 3600 + 12 * 3600)];
     double completion = 1.0 - eventId / 10.0;
     EventType type = eventId % 3;
