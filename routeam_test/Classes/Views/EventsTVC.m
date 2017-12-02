@@ -34,10 +34,8 @@
     if (!_resultsController && self.context) {
         
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass([Event class])];
-        request.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"eventId"
-                                                                  ascending:YES
-                                                                   selector:@selector(compare:)]];
-        
+        request.sortDescriptors = @[[self currentSortDescriptor]];
+
         _resultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                                  managedObjectContext:self.context
                                                                    sectionNameKeyPath:nil
@@ -48,6 +46,28 @@
     }
     
     return _resultsController;
+    
+}
+
+- (NSSortDescriptor *)currentSortDescriptor {
+
+    NSDictionary *currentSettings = [SettingsController currentSettings];
+    NSDictionary *sortOptions = currentSettings[SORT_OPTIONS];
+    NSString *currentSortOption = sortOptions[CURRENT_SORT];
+
+    NSString *sortKey = [[currentSortOption capitalizedString] stringByReplacingOccurrencesOfString:@" "
+                                                                                         withString:@""];
+    NSString *firstLetter = [sortKey substringToIndex:1].lowercaseString;
+    sortKey = [firstLetter stringByAppendingString:[sortKey substringFromIndex:1]];
+
+    NSLog(@"sortKey %@", sortKey);
+    
+    BOOL asc = [sortOptions[currentSortOption] isEqualToString:SORT_ACS];
+
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:sortKey
+                                                                     ascending:asc
+                                                                      selector:@selector(compare:)];
+    return sortDescriptor;
     
 }
 
