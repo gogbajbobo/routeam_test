@@ -93,18 +93,17 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-    
     [super viewWillAppear:animated];
-    self.spinner = [SpinnerView spinnerViewWithFrame:self.view.frame];
-    [self.view addSubview:self.spinner];
-    
 }
 
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    
     [self subscribeToNotifications];
     self.title = @"Events";
+    self.spinner = [SpinnerView spinnerViewWithFrame:self.view.frame];
+    [self.view addSubview:self.spinner];
     
 }
 
