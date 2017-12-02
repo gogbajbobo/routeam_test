@@ -18,6 +18,9 @@
 #import "SettingsTVC.h"
 
 
+#define CELL_IMAGE_HEIGHT 40.0
+
+
 @interface EventsTVC () <NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, strong) SpinnerView *spinner;
@@ -158,6 +161,9 @@
 
     cell.textLabel.text = event.name;
     
+    [self setTypeImageForCell:cell
+                        event:event];
+    
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 
     return cell;
@@ -170,6 +176,48 @@
                               sender:indexPath];
     
 }
+
+- (void)setTypeImageForCell:(UITableViewCell *)cell event:(Event *)event {
+    
+    NSString *typeImageName = nil;
+    
+    switch (event.type.integerValue) {
+        case 0:
+            typeImageName = @"icons8-expensive_filled";
+            break;
+        case 1:
+            typeImageName = @"icons8-sigma_filled";
+            break;
+        case 2:
+            typeImageName = @"icons8-table_of_content_filled";
+            break;
+
+        default:
+            break;
+    }
+    
+    if (!typeImageName) return;
+    
+    UIImage *typeImage = [UIImage imageNamed:typeImageName];
+    
+    [self setImage:typeImage
+           forCell:cell];
+    
+}
+
+- (void)setImage:(UIImage *)cellImage forCell:(UITableViewCell *)cell {
+    
+    if (!cellImage) return;
+    
+    cell.imageView.image = cellImage;
+    
+    CGFloat widthScale = CELL_IMAGE_HEIGHT / cellImage.size.width;
+    CGFloat heightScale = CELL_IMAGE_HEIGHT / cellImage.size.height;
+    
+    cell.imageView.transform = CGAffineTransformMakeScale(widthScale, heightScale);
+    
+}
+
 
 #pragma mark - NSFetchedResultsController delegate
 
