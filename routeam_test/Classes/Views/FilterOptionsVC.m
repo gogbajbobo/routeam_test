@@ -71,6 +71,15 @@
     
 }
 
+- (NSNumberFormatter *)numberFormatter {
+    
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    numberFormatter.numberStyle = NSNumberFormatterPercentStyle;
+    
+    return numberFormatter;
+    
+}
+
 
 #pragma mark - actions
 
@@ -188,7 +197,13 @@
     self.completionMinSlider.enabled = state;
     
     NSNumber *value = [self filterOptions][FILTER_COMPLETION_MIN][FILTER_VALUE];
-    self.completionMinSlider.value = value ? value.floatValue : 0.0;
+    float sliderValue = value ? value.floatValue : 0.0;
+    self.completionMinSlider.value = sliderValue;
+    self.completionMinLabel.text = [NSString stringWithFormat:@"%@ %@", FILTER_COMPLETION_MIN, [[self numberFormatter] stringFromNumber:@(sliderValue)]];
+    
+    if (sliderValue > self.completionMaxSlider.value) {
+#warning - change completionMaxSlider.value
+    }
 
 }
 
@@ -200,7 +215,13 @@
     self.completionMaxSlider.enabled = state;
     
     NSNumber *value = [self filterOptions][FILTER_COMPLETION_MAX][FILTER_VALUE];
-    self.completionMaxSlider.value = value ? value.floatValue : 1.0;
+    float sliderValue = value ? value.floatValue : 1.0;
+    self.completionMaxSlider.value = sliderValue;
+    self.completionMaxLabel.text = [NSString stringWithFormat:@"%@ %@", FILTER_COMPLETION_MAX, [[self numberFormatter] stringFromNumber:@(sliderValue)]];
+
+    if (sliderValue < self.completionMinSlider.value) {
+#warning - change completionMinSlider.value
+    }
 
 }
 
