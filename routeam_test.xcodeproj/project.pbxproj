@@ -34,6 +34,7 @@
 		2CBD48721FD2864300C9BCF2 /* icons8-sigma_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CBD48711FD2864300C9BCF2 /* icons8-sigma_filled.png */; };
 		2CBD48741FD2869D00C9BCF2 /* icons8-expensive_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CBD48731FD2869D00C9BCF2 /* icons8-expensive_filled.png */; };
 		2CBD48761FD286BD00C9BCF2 /* icons8-table_of_content_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CBD48751FD286BD00C9BCF2 /* icons8-table_of_content_filled.png */; };
+		2CBD48791FD3410100C9BCF2 /* FilterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD48781FD3410100C9BCF2 /* FilterHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,8 @@
 		2CBD48711FD2864300C9BCF2 /* icons8-sigma_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-sigma_filled.png"; path = "../../../../Documents/com.visualpharm.Icons8/ios/Science/100/000000/icons8-sigma_filled.png"; sourceTree = "<group>"; };
 		2CBD48731FD2869D00C9BCF2 /* icons8-expensive_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-expensive_filled.png"; sourceTree = "<group>"; };
 		2CBD48751FD286BD00C9BCF2 /* icons8-table_of_content_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-table_of_content_filled.png"; sourceTree = "<group>"; };
+		2CBD48771FD3410100C9BCF2 /* FilterHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilterHelper.h; sourceTree = "<group>"; };
+		2CBD48781FD3410100C9BCF2 /* FilterHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilterHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +233,8 @@
 				2CBD47A71FCFF34900C9BCF2 /* DataController.m */,
 				2CBD48681FD16B0E00C9BCF2 /* SettingsController.h */,
 				2CBD48691FD16B0E00C9BCF2 /* SettingsController.m */,
+				2CBD48771FD3410100C9BCF2 /* FilterHelper.h */,
+				2CBD48781FD3410100C9BCF2 /* FilterHelper.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -398,6 +403,7 @@
 				2CBD48551FD1671C00C9BCF2 /* SortOptionsTVC.m in Sources */,
 				2CBD486F1FD1734B00C9BCF2 /* SpinnerView.m in Sources */,
 				2CBD48521FD148D700C9BCF2 /* FilterOptionsVC.m in Sources */,
+				2CBD48791FD3410100C9BCF2 /* FilterHelper.m in Sources */,
 				2CBD48401FD089C900C9BCF2 /* ParticipantsTVC.m in Sources */,
 				2CBD484A1FD1450400C9BCF2 /* SettingsTVC.m in Sources */,
 				2CBD48351FD01AF700C9BCF2 /* Participant+CoreDataProperties.m in Sources */,

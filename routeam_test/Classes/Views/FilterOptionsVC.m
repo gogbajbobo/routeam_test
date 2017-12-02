@@ -12,6 +12,7 @@
 #import "DataModel.h"
 #import "DataController.h"
 #import "SettingsController.h"
+#import "FilterHelper.h"
 
 
 @interface FilterOptionsVC ()
@@ -132,6 +133,7 @@
     [self updateFinishDateFilter];
     [self updateCompletionMinFilter];
     [self updateCompletionMaxFilter];
+    [self updateFilteredEventsCount];
     
 }
 
@@ -223,6 +225,14 @@
 #warning - change completionMinSlider.value
     }
 
+}
+
+- (void)updateFilteredEventsCount {
+    
+    NSUInteger eventsCount = [[self events] filteredArrayUsingPredicate:[FilterHelper eventsPredicate]].count;
+    
+    self.filteredEventsCountLabel.text = [NSString stringWithFormat:@"Filtered events count: %@", @(eventsCount)];
+    
 }
 
 
