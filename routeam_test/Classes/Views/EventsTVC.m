@@ -63,8 +63,6 @@
     NSString *firstLetter = [sortKey substringToIndex:1].lowercaseString;
     sortKey = [firstLetter stringByAppendingString:[sortKey substringFromIndex:1]];
 
-    NSLog(@"sortKey %@", sortKey);
-    
     BOOL asc = [sortOptions[currentSortOption] isEqualToString:SORT_ACS];
 
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:sortKey
