@@ -11,4 +11,31 @@
 
 @implementation Event
 
+- (NSString *)completionText {
+    
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    numberFormatter.numberStyle = NSNumberFormatterPercentStyle;
+
+    return [numberFormatter stringFromNumber:self.completion];
+    
+}
+
+- (NSString *)startDateString {
+    return [[self dateFormatter] stringFromDate:self.startDate];
+}
+
+- (NSString *)finishDateString {
+    return [[self dateFormatter] stringFromDate:self.finishDate];
+}
+
+- (NSDateFormatter *)dateFormatter {
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateStyle = NSDateFormatterMediumStyle;
+    
+    return dateFormatter;
+    
+}
+
+
 @end

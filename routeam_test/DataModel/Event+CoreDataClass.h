@@ -16,6 +16,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Event : NSManagedObject
 
+- (NSString *)completionText;
+- (NSString *)startDateString;
+- (NSString *)finishDateString;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -36,29 +36,11 @@
 - (void)showEventData {
     
     self.name.text = self.event.name;
-    self.startTime.text = [[self dateFormatter] stringFromDate:self.event.startDate];
-    self.finishTime.text = [[self dateFormatter] stringFromDate:self.event.finishDate];
+    self.startTime.text = [self.event startDateString];
+    self.finishTime.text = [self.event finishDateString];
     self.type.text = @"have to fill type";
-    self.completion.text = [[self numberFormatter] stringFromNumber:self.event.completion];
+    self.completion.text = [self.event completionText];
     self.info.text = self.event.info;
-    
-}
-
-- (NSDateFormatter *)dateFormatter {
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.dateStyle = NSDateFormatterMediumStyle;
-    
-    return dateFormatter;
-    
-}
-
-- (NSNumberFormatter *)numberFormatter {
-    
-    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
-    numberFormatter.numberStyle = NSNumberFormatterPercentStyle;
-    
-    return numberFormatter;
     
 }
 
