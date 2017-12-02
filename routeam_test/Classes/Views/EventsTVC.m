@@ -11,6 +11,7 @@
 #import <CoreData/CoreData.h>
 #import "DataModel.h"
 #import "DataController.h"
+#import "SettingsController.h"
 
 #import "SpinnerView.h"
 #import "EventDetailsVC.h"
@@ -89,6 +90,10 @@
                name:DOCUMENT_READY_NOTIFICATION
              object:nil];
 
+    [nc addObserver:self
+           selector:@selector(fetchEvents)
+               name:SORT_ORDER_CHANGED_NOTIFICATION
+             object:nil];
     
 }
 

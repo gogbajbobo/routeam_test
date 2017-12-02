@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define SORT_ORDER_CHANGED_NOTIFICATION @"sortOrderChanged"
+
 #define SORT_OPTIONS @"sortOptions"
 #define FILTER_OPTIONS @"filterOptions"
 

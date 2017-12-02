@@ -128,6 +128,9 @@
 
     }
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:SORT_ORDER_CHANGED_NOTIFICATION
+                                                        object:nil];
+    
 }
 
 
