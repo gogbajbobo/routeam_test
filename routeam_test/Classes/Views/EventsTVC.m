@@ -159,7 +159,8 @@
 
     Event *event = [self.resultsController objectAtIndexPath:indexPath];
 
-    cell.textLabel.text = event.name;
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ — %@", event.name, [event completionText]];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ — %@", [event startDateString], [event finishDateString]];
     
     [self setTypeImageForCell:cell
                         event:event];
