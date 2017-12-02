@@ -23,11 +23,24 @@
 #define SORT_ACS @"acs"
 #define SORT_DESC @"desc"
 
+#define FILTER_TYPE @"Type"
+#define FILTER_NAME @"Name"
+#define FILTER_STARTDATE @"Start date"
+#define FILTER_FINISHDATE @"Finish date"
+#define FILTER_COMPLETION_MIN @"Completion min"
+#define FILTER_COMPLETION_MAX @"Completion max"
+
+#define FILTER_STATE @"filterState"
+#define FILTER_ON YES
+#define FILTER_OFF NO
+#define FILTER_VALUE @"filterValue"
+
 
 @interface SettingsController : NSObject
 
 + (NSDictionary *)currentSettings;
 + (NSArray *)sortKeys;
++ (NSArray *)filterKeys;
 
 + (void)setNewSettingValue:(NSDictionary *)settingDic;
 

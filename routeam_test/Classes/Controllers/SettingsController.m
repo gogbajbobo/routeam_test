@@ -31,20 +31,33 @@
     return @[SORT_TYPE, SORT_NAME, SORT_STARTDATE, SORT_FINISHDATE, SORT_COMPLETION, CURRENT_SORT];
 }
 
-+ (NSArray *)sortValues {
++ (NSArray *)defaultSortValues {
     return @[SORT_ACS, SORT_DESC, SORT_ACS, SORT_ACS, SORT_ACS, SORT_NAME];
 }
 
 + (NSArray *)filterKeys {
-    return @[];
+    return @[FILTER_TYPE, FILTER_NAME, FILTER_STARTDATE, FILTER_FINISHDATE, FILTER_COMPLETION_MIN, FILTER_COMPLETION_MAX];
+}
+
++ (NSArray *)defaultFilterValues {
+    
+    NSMutableArray *filterStates = @[].mutableCopy;
+    
+    [[self filterKeys] enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [filterStates addObject:@{FILTER_STATE: @(FILTER_OFF)}.mutableCopy];
+    }];
+    
+    return filterStates;
+    
 }
 
 + (NSDictionary *)initSettings {
     
-    NSMutableDictionary *sortOptions = [NSMutableDictionary dictionaryWithObjects:[self sortValues]
+    NSMutableDictionary *sortOptions = [NSMutableDictionary dictionaryWithObjects:[self defaultSortValues]
                                                                           forKeys:[self sortKeys]];
     
-    NSMutableDictionary *filterOptions = @{}.mutableCopy;
+    NSMutableDictionary *filterOptions = [NSMutableDictionary dictionaryWithObjects:[self defaultFilterValues]
+                                                                            forKeys:[self filterKeys]];
     
     NSMutableDictionary *settings = [NSMutableDictionary dictionaryWithObjects:@[sortOptions, filterOptions]
                                                                        forKeys:[self mainKeys]];
