@@ -9,7 +9,6 @@
 #import "DataController.h"
 
 #import <CoreData/CoreData.h>
-#import <UIKit/UIKit.h>
 #import "DataModel.h"
 
 
@@ -37,6 +36,10 @@
     
     return _sharedInstance;
 
+}
+
++ (UIManagedDocument *)document {
+    return [DataController sharedController].document;
 }
 
 

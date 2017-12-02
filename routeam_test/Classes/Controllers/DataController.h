@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import <UIKit/UIKit.h>
+
 
 #define DOCUMENT_READY_NOTIFICATION @"documentReady"
 
@@ -15,6 +17,8 @@
 @interface DataController : NSObject
 
 + (instancetype)sharedController;
+
++ (UIManagedDocument *)document;
 
 
 @end
