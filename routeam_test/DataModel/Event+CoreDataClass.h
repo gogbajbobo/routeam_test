@@ -19,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSString *)completionText;
 - (NSString *)startDateString;
 - (NSString *)finishDateString;
+- (NSString *)typeImageName;
 
 
 @end

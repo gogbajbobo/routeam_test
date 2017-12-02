@@ -178,22 +178,7 @@
 
 - (void)setTypeImageForCell:(UITableViewCell *)cell event:(Event *)event {
     
-    NSString *typeImageName = nil;
-    
-    switch (event.type.integerValue) {
-        case 0:
-            typeImageName = @"icons8-expensive_filled";
-            break;
-        case 1:
-            typeImageName = @"icons8-sigma_filled";
-            break;
-        case 2:
-            typeImageName = @"icons8-table_of_content_filled";
-            break;
-
-        default:
-            break;
-    }
+    NSString *typeImageName = [event typeImageName];
     
     if (!typeImageName) return;
     

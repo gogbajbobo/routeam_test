@@ -37,5 +37,30 @@
     
 }
 
+- (NSString *)typeImageName {
+    
+    NSString *typeImageName = nil;
+    
+    EventType type = self.type.integerValue;
+    
+    switch (type) {
+        case EventTypeUnits:
+            typeImageName = @"icons8-expensive_filled";
+            break;
+        case EventTypeSum:
+            typeImageName = @"icons8-sigma_filled";
+            break;
+        case EventTypeNames:
+            typeImageName = @"icons8-table_of_content_filled";
+            break;
+            
+        default:
+            break;
+    }
+    
+    return typeImageName;
+
+}
+
 
 @end

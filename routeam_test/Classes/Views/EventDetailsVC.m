@@ -43,34 +43,11 @@
     self.completion.text = [self.event completionText];
     self.info.text = self.event.info;
  
-    NSString *typeImageName = nil;
-    
-    switch (self.event.type.integerValue) {
-        case 0:
-            typeImageName = @"icons8-expensive_filled";
-            break;
-        case 1:
-            typeImageName = @"icons8-sigma_filled";
-            break;
-        case 2:
-            typeImageName = @"icons8-table_of_content_filled";
-            break;
-            
-        default:
-            break;
-    }
-    
+    NSString *typeImageName = [self.event typeImageName];
     if (!typeImageName) return;
     
-    UIImage *typeImage = [UIImage imageNamed:typeImageName];
+    self.typeImageView.image = [UIImage imageNamed:typeImageName];
     
-    self.typeImageView.image = typeImage;
-    
-    CGFloat widthScale = self.typeImageView.frame.size.width / typeImage.size.width;
-    CGFloat heightScale = self.typeImageView.frame.size.height / typeImage.size.height;
-    
-    self.typeImageView.transform = CGAffineTransformMakeScale(widthScale, heightScale);
-
 }
 
 
