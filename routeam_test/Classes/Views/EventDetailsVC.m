@@ -105,6 +105,9 @@
     if ([segue.identifier isEqualToString:@"showParticipants"] &&
         [segue.destinationViewController isKindOfClass:[ParticipantsTVC class]]) {
         
+        ParticipantsTVC *participantsTVC = (ParticipantsTVC *)segue.destinationViewController;
+        participantsTVC.eventId = self.eventId;
+        
     }
     
 }

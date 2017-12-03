@@ -10,4 +10,7 @@
 
 @interface ParticipantsTVC : UITableViewController
 
+@property (nonatomic, strong) NSNumber *eventId;
+
+
 @end
