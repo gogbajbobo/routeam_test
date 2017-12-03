@@ -15,7 +15,7 @@
 #import "FilterHelper.h"
 
 
-@interface FilterOptionsVC ()
+@interface FilterOptionsVC () <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *typeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -250,6 +250,10 @@
 
 - (void)updateSetting:(NSString *)setting withValue:(NSDictionary *)settingValue {
     
+    if (![setting isEqualToString:FILTER_NAME]) {
+        [self dismissKeyboard];
+    }
+    
     NSDictionary *newSetting = @{@"option": FILTER_OPTIONS,
                                  @"setting": setting,
                                  @"value": settingValue
@@ -264,6 +268,8 @@
 #pragma mark - initialize elements
 
 - (void)initializeElements {
+    
+    self.nameTextField.delegate = self;
     
     [self updateTypeFilter];
     [self updateNameFilter];
@@ -377,11 +383,39 @@
 }
 
 
+#pragma mark - keyboard
+
+- (void)addTapGesture {
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                          action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+    
+}
+
+- (void)dismissKeyboard {
+    [self.nameTextField resignFirstResponder];
+}
+
+
+#pragma mark - UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    if ([textField isEqual:self.nameTextField]) {
+        [self dismissKeyboard];
+    }
+    
+    return YES;
+}
+
+
 #pragma mark - view lifecycle
 
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
+    [self addTapGesture];
     [self initializeElements];
     
 }
