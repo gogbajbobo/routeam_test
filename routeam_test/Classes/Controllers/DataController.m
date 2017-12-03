@@ -140,8 +140,6 @@
     
     if (!eventsCount) {
         [self requestEventsData];
-    } else {
-        NSLog(@"eventsCount %@", @(eventsCount));
     }
     
 }

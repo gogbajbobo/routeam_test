@@ -48,8 +48,6 @@
 - (NSDictionary *)filterOptions {
     
     NSDictionary *filterOptions = [SettingsController currentSettings][FILTER_OPTIONS];
-    NSLog(@"filterOptions %@", filterOptions);
-
     return filterOptions;
     
 }
