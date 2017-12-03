@@ -40,7 +40,7 @@
     if ([filterKey isEqualToString:FILTER_TYPE]) {
         return [NSPredicate predicateWithFormat:@"type == %@", filterValue];
     } else if ([filterKey isEqualToString:FILTER_NAME]) {
-        return [NSPredicate predicateWithFormat:@"name == %@", filterValue];
+        return [NSPredicate predicateWithFormat:@"name contains[cd] %@", filterValue];
     } else if ([filterKey isEqualToString:FILTER_STARTDATE]) {
         return [NSPredicate predicateWithFormat:@"startDate >= %@", filterValue];
     } else if ([filterKey isEqualToString:FILTER_FINISHDATE]) {
