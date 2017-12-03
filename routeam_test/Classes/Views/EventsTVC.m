@@ -12,6 +12,7 @@
 #import "DataModel.h"
 #import "DataController.h"
 #import "SettingsController.h"
+#import "FilterHelper.h"
 
 #import "SpinnerView.h"
 #import "EventDetailsVC.h"
@@ -38,6 +39,7 @@
         
         NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass([Event class])];
         request.sortDescriptors = @[[self currentSortDescriptor]];
+        request.predicate = [FilterHelper eventsPredicate];
 
         _resultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:request
                                                                  managedObjectContext:self.context
@@ -119,7 +121,13 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated {
+    
     [super viewWillAppear:animated];
+    
+    if (self.context) {
+        [self fetchEvents];
+    }
+    
 }
 
 - (void)viewDidLoad {
@@ -136,6 +144,7 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
+
 
 #pragma mark - Table view data source
 
