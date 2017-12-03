@@ -85,41 +85,177 @@
 #pragma mark - actions
 
 - (IBAction)typeSwitchChanged:(id)sender {
-    NSLog(@"typeSwitchChanged");
+
+    if ([sender isEqual:self.typeSwitch]) {
+        [self updateTypeFilterSetting];
+    }
+    
 }
 
 - (IBAction)nameSwitchChanged:(id)sender {
-    NSLog(@"nameSwitchChanged");
+    
+    if ([sender isEqual:self.nameSwitch]) {
+        [self updateNameFilterSetting];
+    }
+    
 }
 
 - (IBAction)startDateSwitchChanged:(id)sender {
+
+    if ([sender isEqual:self.startDateSwitch]) {
+        [self updateStartDateFilterSetting];
+    }
+
 }
 
 - (IBAction)finishDateSwitchChanged:(id)sender {
+
+    if ([sender isEqual:self.finishDateSwitch]) {
+        [self updateFinishDateFilterSetting];
+    }
+
 }
 
 - (IBAction)completionMinSwitchChanged:(id)sender {
+    
+    if ([sender isEqual:self.completionMinSwitch]) {
+        [self updateCompletionMinFilterSetting];
+    }
+
 }
 
 - (IBAction)completionMaxSwitchChanged:(id)sender {
+
+    if ([sender isEqual:self.completionMaxSwitch]) {
+        [self updateCompletionMaxFilterSetting];
+    }
+
 }
 
 - (IBAction)typeValueChanged:(id)sender {
+    
+    if ([sender isEqual:self.typeSegmentedControl]) {
+        [self updateTypeFilterSetting];
+    }
 }
 
 - (IBAction)nameValueChanged:(id)sender {
+    
+    if ([sender isEqual:self.nameTextField]) {
+        [self updateNameFilterSetting];
+    }
+    
 }
 
 - (IBAction)startDateFilterPressed:(id)sender {
+    // show date picker
 }
 
 - (IBAction)finishDateFilterPressed:(id)sender {
+    // show date picker
 }
 
 - (IBAction)completionMinChanged:(id)sender {
+    
+    if ([sender isEqual:self.completionMinSlider]) {
+        [self updateCompletionMinFilterSetting];
+    }
+
 }
 
 - (IBAction)completionMaxChanged:(id)sender {
+    
+    if ([sender isEqual:self.completionMaxSlider]) {
+        [self updateCompletionMaxFilterSetting];
+    }
+
+}
+
+
+#pragma mark - update settings
+
+- (void)updateTypeFilterSetting {
+    
+    NSDictionary *settingValue = @{FILTER_STATE: @(self.typeSwitch.on),
+                                   FILTER_VALUE: @(self.typeSegmentedControl.selectedSegmentIndex)
+                                   };
+    
+    [self updateSetting:FILTER_TYPE
+              withValue:settingValue];
+    
+    [self updateTypeFilter];
+
+}
+
+- (void)updateNameFilterSetting {
+
+    NSDictionary *settingValue = @{FILTER_STATE: @(self.nameSwitch.on),
+                                   FILTER_VALUE: self.nameTextField.text
+                                   };
+    
+    [self updateSetting:FILTER_NAME
+              withValue:settingValue];
+    
+    [self updateNameFilter];
+
+}
+
+- (void)updateStartDateFilterSetting {
+    
+    NSDictionary *settingValue = @{FILTER_STATE: @(self.startDateSwitch.on)};
+    
+    [self updateSetting:FILTER_STARTDATE
+              withValue:settingValue];
+    
+    [self updateStartDateFilter];
+
+}
+
+- (void)updateFinishDateFilterSetting {
+
+    NSDictionary *settingValue = @{FILTER_STATE: @(self.finishDateSwitch.on)};
+    
+    [self updateSetting:FILTER_FINISHDATE
+              withValue:settingValue];
+    
+    [self updateFinishDateFilter];
+
+}
+
+- (void)updateCompletionMinFilterSetting {
+    
+    NSDictionary *settingValue = @{FILTER_STATE: @(self.completionMinSwitch.on),
+                                   FILTER_VALUE: @(self.completionMinSlider.value)
+                                   };
+    
+    [self updateSetting:FILTER_COMPLETION_MIN
+              withValue:settingValue];
+    
+    [self updateCompletionMinFilter];
+
+}
+
+- (void)updateCompletionMaxFilterSetting {
+    
+    NSDictionary *settingValue = @{FILTER_STATE: @(self.completionMaxSwitch.on),
+                                   FILTER_VALUE: @(self.completionMaxSlider.value)
+                                   };
+    
+    [self updateSetting:FILTER_COMPLETION_MAX
+              withValue:settingValue];
+    
+    [self updateCompletionMaxFilter];
+
+}
+
+- (void)updateSetting:(NSString *)setting withValue:(NSDictionary *)settingValue {
+    
+    NSDictionary *newSetting = @{@"option": FILTER_OPTIONS,
+                                 @"setting": setting,
+                                 @"value": settingValue
+                                 };
+    [SettingsController setNewSettingValue:newSetting];
+
 }
 
 
