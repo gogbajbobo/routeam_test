@@ -8,12 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-#import "DataModel.h"
-
 
 @interface EventDetailsVC : UIViewController
 
-@property (nonatomic, strong) Event *event;
+@property (nonatomic, strong) NSNumber *eventId;
 
 
 @end

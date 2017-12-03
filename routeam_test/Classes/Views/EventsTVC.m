@@ -238,7 +238,7 @@
         NSIndexPath *indexPath = (NSIndexPath *)sender;
         Event *event = [self.resultsController objectAtIndexPath:indexPath];
         EventDetailsVC *eventDetailsVC = (EventDetailsVC *)segue.destinationViewController;
-        eventDetailsVC.event = event;
+        eventDetailsVC.eventId = event.eventId;
         
     }
 

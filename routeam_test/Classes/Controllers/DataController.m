@@ -138,6 +138,30 @@
     
 }
 
++ (void)getDetailDataForEventId:(NSNumber *)eventId withCompletionHandler:(void (^)(BOOL success, NSDictionary *data))completionHandler {
+    
+    NSDictionary *event = [self eventWithId:eventId.integerValue];
+    [self handleEvent:event];
+    
+    NSArray <NSDictionary *> *participants = [self participantsWithEventId:eventId.integerValue];
+    [participants enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull participant, NSUInteger idx, BOOL * _Nonnull stop) {
+        [self handleParticipant:participant withEventId:eventId];
+    }];
+    
+    NSLog(@"%@ participants for event #%@", @(participants.count), eventId);
+    
+    NSMutableDictionary *returnData = @{@"event": event,
+                                        @"participants": participants
+                                        }.mutableCopy;
+
+    BOOL success = YES;
+    if (completionHandler) completionHandler(success, returnData);
+
+}
+
+
+#pragma mark - events
+
 + (NSArray <NSDictionary *> *)eventsData {
     
     NSMutableArray <NSDictionary *> *result = @[].mutableCopy;
@@ -172,14 +196,6 @@
     
 }
 
-+ (NSArray *)participantsWithEventId:(NSUInteger)eventId {
-    return nil;
-}
-
-+ (NSDictionary *)participantWithId:(NSUInteger)participantId {
-    return nil;
-}
-
 + (void)handleEventsData:(NSArray <NSDictionary *> *)eventsData {
     
     [eventsData enumerateObjectsUsingBlock:^(NSDictionary * _Nonnull event, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -210,8 +226,6 @@
         
     }
     
-//    NSLog(@"eventObject %@", eventObject);
-    
 }
 
 + (Event *)eventObjectWithId:(NSNumber *)eventId {
@@ -239,6 +253,89 @@
     
     return eventObject;
     
+}
+
+
+#pragma mark - participants
+
++ (NSArray <NSDictionary *> *)participantsWithEventId:(NSUInteger)eventId {
+    
+    NSMutableArray <NSDictionary *> *result = @[].mutableCopy;
+    
+    for (NSUInteger i = 0; i < (eventId % 4) + 1; i++) {
+        [result addObject:[self participantWithId:i]];
+    }
+    
+    return result;
+    
+}
+
++ (NSDictionary *)participantWithId:(NSUInteger)participantId {
+    
+    NSString *idString = @(participantId).stringValue;
+    double completion = 1.0 - participantId / 20.0;
+    double plan = 0.05 * participantId;
+    
+    NSDictionary *participant = @{@"participantId": @(participantId),
+                                  @"name": [@"Participant #" stringByAppendingString:idString],
+                                  @"plan": @(plan),
+                                  @"completion": @(completion)
+                                  };
+    
+    return participant;
+    
+}
+
++ (void)handleParticipant:(NSDictionary *)participant withEventId:(NSNumber *)eventId {
+    
+    NSNumber *participantId = participant[@"participantId"];
+    
+    if (!participantId) return;
+    
+    Participant *participantObject = [self participantObjectWithId:participantId];
+    participantObject.event = [self eventObjectWithId:eventId];
+
+    NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass([Participant class])
+                                              inManagedObjectContext:[self context]];
+
+    NSArray *attributes = entity.attributesByName.allKeys;
+
+    for (NSString *attribute in attributes) {
+
+        if (!participant[attribute]) continue;
+
+        [participantObject setValue:participant[attribute]
+                             forKey:attribute];
+
+    }
+    
+}
+
++ (Participant *)participantObjectWithId:(NSNumber *)participantId {
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass([Participant class])];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"participantId == %@", participantId];
+    request.predicate = predicate;
+    
+    NSError *error = nil;
+    
+    Participant *participantObject = [[self context] executeFetchRequest:request
+                                                                   error:&error].lastObject;
+    
+    if (!participantObject) participantObject = [self newParticipantObjectWithId:participantId];
+    
+    return participantObject;
+    
+}
+
++ (Participant *)newParticipantObjectWithId:(NSNumber *)participantId {
+    
+    Participant *participantObject = [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass([Participant class])
+                                                                   inManagedObjectContext:[self context]];
+    participantObject.participantId = participantId;
+    
+    return participantObject;
+
 }
 
 

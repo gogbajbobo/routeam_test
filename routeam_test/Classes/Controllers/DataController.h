@@ -21,6 +21,8 @@
 + (UIManagedDocument *)document;
 
 + (void)getEventsDataWithCompletionHandler:(void (^)(BOOL success, NSArray <NSDictionary *> *data))completionHandler;
++ (void)getDetailDataForEventId:(NSNumber *)eventId
+          withCompletionHandler:(void (^)(BOOL success, NSDictionary *data))completionHandler;
 
 
 @end

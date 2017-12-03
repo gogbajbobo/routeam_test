@@ -8,6 +8,8 @@
 
 #import "EventDetailsVC.h"
 
+#import "DataController.h"
+#import "DataModel.h"
 #import "ParticipantsTVC.h"
 
 
@@ -21,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *completion;
 @property (weak, nonatomic) IBOutlet UILabel *info;
 
+@property (nonatomic, strong) Event *event;
 
 
 @end
@@ -50,20 +53,43 @@
     
 }
 
+- (void)fetchEventDetailData {
+
+    [DataController getDetailDataForEventId:self.eventId withCompletionHandler:^(BOOL success, NSDictionary *data) {
+        
+        if (success) {
+            
+            NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass([Event class])];
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"eventId == %@", self.eventId];
+            request.predicate = predicate;
+            
+            NSError *error = nil;
+            
+            self.event = [[DataController document].managedObjectContext executeFetchRequest:request
+                                                                                       error:&error].lastObject;
+            
+            if (self.event) [self showEventData];
+            
+        }
+        
+    }];
+
+}
+
 
 #pragma mark - view lifecycle
 
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
-    [self showEventData];
+    self.title = @"Event details";
     
 }
 
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    self.title = @"Event details";
+    [self fetchEventDetailData];
     
 }
 
