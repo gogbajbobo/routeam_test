@@ -255,6 +255,8 @@
                                  @"value": settingValue
                                  };
     [SettingsController setNewSettingValue:newSetting];
+    
+    [self updateFilteredEventsCount];
 
 }
 
@@ -272,6 +274,9 @@
     [self updateFilteredEventsCount];
     
 }
+
+
+#pragma mark - update elements
 
 - (void)updateTypeFilter {
     
