@@ -99,10 +99,14 @@
         
         [DataController getEventsDataWithCompletionHandler:^(BOOL success, NSArray<NSDictionary *> *data) {
             
-            if (!success) return;
-            UIManagedDocument *document = (UIManagedDocument *)notification.object;
-            self.context = document.managedObjectContext;
-            [self fetchEvents];
+            if (success) {
+
+                UIManagedDocument *document = (UIManagedDocument *)notification.object;
+                self.context = document.managedObjectContext;
+                [self fetchEvents];
+
+            }
+
             [self.spinner removeFromSuperview];
 
         }];
@@ -140,8 +144,8 @@
     
     [self subscribeToNotifications];
     self.title = @"Events";
-    self.spinner = [SpinnerView spinnerViewWithFrame:self.view.frame];
-    [self.view addSubview:self.spinner];
+    self.spinner = [SpinnerView spinnerViewWithFrame:self.navigationController.view.frame];
+    [self.navigationController.view addSubview:self.spinner];
     
 }
 
