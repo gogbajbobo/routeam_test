@@ -35,6 +35,7 @@
 		2CBD48741FD2869D00C9BCF2 /* icons8-expensive_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CBD48731FD2869D00C9BCF2 /* icons8-expensive_filled.png */; };
 		2CBD48761FD286BD00C9BCF2 /* icons8-table_of_content_filled.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CBD48751FD286BD00C9BCF2 /* icons8-table_of_content_filled.png */; };
 		2CBD48791FD3410100C9BCF2 /* FilterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD48781FD3410100C9BCF2 /* FilterHelper.m */; };
+		2CBD487C1FD3FF9500C9BCF2 /* DatePickerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CBD487B1FD3FF9500C9BCF2 /* DatePickerVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,8 @@
 		2CBD48751FD286BD00C9BCF2 /* icons8-table_of_content_filled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icons8-table_of_content_filled.png"; sourceTree = "<group>"; };
 		2CBD48771FD3410100C9BCF2 /* FilterHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FilterHelper.h; sourceTree = "<group>"; };
 		2CBD48781FD3410100C9BCF2 /* FilterHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilterHelper.m; sourceTree = "<group>"; };
+		2CBD487A1FD3FF9500C9BCF2 /* DatePickerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DatePickerVC.h; sourceTree = "<group>"; };
+		2CBD487B1FD3FF9500C9BCF2 /* DatePickerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DatePickerVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -256,6 +259,8 @@
 				2CBD48541FD1671C00C9BCF2 /* SortOptionsTVC.m */,
 				2CBD48501FD148D700C9BCF2 /* FilterOptionsVC.h */,
 				2CBD48511FD148D700C9BCF2 /* FilterOptionsVC.m */,
+				2CBD487A1FD3FF9500C9BCF2 /* DatePickerVC.h */,
+				2CBD487B1FD3FF9500C9BCF2 /* DatePickerVC.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -399,6 +404,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CBD487C1FD3FF9500C9BCF2 /* DatePickerVC.m in Sources */,
 				2CBD483D1FD0808400C9BCF2 /* EventDetailsVC.m in Sources */,
 				2CBD48551FD1671C00C9BCF2 /* SortOptionsTVC.m in Sources */,
 				2CBD486F1FD1734B00C9BCF2 /* SpinnerView.m in Sources */,

@@ -42,9 +42,9 @@
     } else if ([filterKey isEqualToString:FILTER_NAME] && ![filterValue isEqualToString:@""]) {
         return [NSPredicate predicateWithFormat:@"name contains[cd] %@", filterValue];
     } else if ([filterKey isEqualToString:FILTER_STARTDATE]) {
-        return [NSPredicate predicateWithFormat:@"startDate >= %@", filterValue];
+//        return [NSPredicate predicateWithFormat:@"startDate >= %@", filterValue];
     } else if ([filterKey isEqualToString:FILTER_FINISHDATE]) {
-        return [NSPredicate predicateWithFormat:@"finishDate <= %@", filterValue];
+//        return [NSPredicate predicateWithFormat:@"finishDate <= %@", filterValue];
     } else if ([filterKey isEqualToString:FILTER_COMPLETION_MIN]) {
         return [NSPredicate predicateWithFormat:@"completion >= %@", filterValue];
     } else if ([filterKey isEqualToString:FILTER_COMPLETION_MAX]) {

@@ -208,6 +208,9 @@
                                 <state key="normal" title="Start date filter value"/>
                                 <connections>
                                     <action selector="startDateFilterPressed:" destination="bTf-y5-6RY" eventType="touchUpInside" id="UC0-ZP-D4i"/>
+                                    <segue destination="AcI-3C-X9H" kind="popoverPresentation" identifier="showStartDatePicker" popoverAnchorView="Uas-NV-0sz" id="10d-5s-0gf">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Finish date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jmr-Xa-Q8p">
@@ -230,6 +233,9 @@
                                 <state key="normal" title="Finish date filter value"/>
                                 <connections>
                                     <action selector="finishDateFilterPressed:" destination="bTf-y5-6RY" eventType="touchUpInside" id="bLp-m6-gv6"/>
+                                    <segue destination="AcI-3C-X9H" kind="popoverPresentation" identifier="showFinishDatePicker" popoverAnchorView="P26-zJ-wYB" id="PuA-cw-akG">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES"/>
+                                    </segue>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Completion min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYh-ty-KkR">
@@ -350,6 +356,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="09p-ft-By9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1717.5" y="-794.36619718309862"/>
+        </scene>
+        <!--Select date-->
+        <scene sceneID="Aob-Wm-BTz">
+            <objects>
+                <viewController title="Select date" id="AcI-3C-X9H" customClass="DatePickerVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kPn-6g-T0J">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wcw-Y9-eG3">
+                                <rect key="frame" x="0.0" y="206" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="8xa-d3-rvC"/>
+                                    <barButtonItem systemItem="done" id="QeC-tj-iZL">
+                                        <connections>
+                                            <action selector="doneButtonPressed:" destination="AcI-3C-X9H" id="CHb-jw-FHn"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Pmg-Ph-Va7">
+                                <rect key="frame" x="0.0" y="44" width="320" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="533986603.66249198">
+                                    <!--2017-12-03 09:36:43 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="datePickerValueChanged:" destination="AcI-3C-X9H" eventType="valueChanged" id="uCF-Y8-mvt"/>
+                                </connections>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GmJ-Lj-fBb" firstAttribute="trailing" secondItem="wcw-Y9-eG3" secondAttribute="trailing" id="8te-1m-gtv"/>
+                            <constraint firstItem="wcw-Y9-eG3" firstAttribute="leading" secondItem="GmJ-Lj-fBb" secondAttribute="leading" id="I8q-lU-4cI"/>
+                            <constraint firstItem="Pmg-Ph-Va7" firstAttribute="leading" secondItem="GmJ-Lj-fBb" secondAttribute="leading" id="LUP-PZ-qIS"/>
+                            <constraint firstItem="GmJ-Lj-fBb" firstAttribute="trailing" secondItem="Pmg-Ph-Va7" secondAttribute="trailing" id="dGa-WO-JGi"/>
+                            <constraint firstItem="Pmg-Ph-Va7" firstAttribute="centerY" secondItem="GmJ-Lj-fBb" secondAttribute="centerY" constant="-22" id="nRE-O0-crV"/>
+                            <constraint firstItem="GmJ-Lj-fBb" firstAttribute="bottom" secondItem="wcw-Y9-eG3" secondAttribute="bottom" id="vUq-6Y-yHM"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GmJ-Lj-fBb"/>
+                    </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
+                    <size key="freeformSize" width="320" height="250"/>
+                    <connections>
+                        <outlet property="datePicker" destination="Pmg-Ph-Va7" id="bRQ-Fn-GuR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O2N-d0-1a4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2571" y="-794"/>
         </scene>
         <!--Event DetailsVC-->
         <scene sceneID="vPt-lA-ODO">
@@ -503,4 +559,7 @@
     <resources>
         <image name="icons8-settings.png" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="PuA-cw-akG"/>
+    </inferredMetricsTieBreakers>
 </document>
