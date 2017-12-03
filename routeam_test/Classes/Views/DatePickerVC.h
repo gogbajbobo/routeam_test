@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+#import "DatePickerOwner.h"
+
+
 @interface DatePickerVC : UIViewController
+
+@property (nonatomic, weak) id <DatePickerOwner> owner;
+
+@property (nonatomic, strong) NSDate *minDate;
+@property (nonatomic, strong) NSDate *maxDate;
+@property (nonatomic, strong) NSDate *date;
 
 @end

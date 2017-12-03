@@ -13,9 +13,11 @@
 #import "DataController.h"
 #import "SettingsController.h"
 #import "FilterHelper.h"
+#import "DatePickerOwner.h"
+#import "DatePickerVC.h"
 
 
-@interface FilterOptionsVC () <UITextFieldDelegate>
+@interface FilterOptionsVC () <UITextFieldDelegate, DatePickerOwner>
 
 @property (weak, nonatomic) IBOutlet UILabel *typeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -39,11 +41,26 @@
 @property (weak, nonatomic) IBOutlet UISlider *completionMinSlider;
 @property (weak, nonatomic) IBOutlet UISlider *completionMaxSlider;
 
+@property (nonatomic, strong) NSString *datePickerDateType;
+
 
 @end
 
 @implementation FilterOptionsVC
 
+@synthesize pickerDate = _pickerDate;
+
+- (void)setPickerDate:(NSDate *)pickerDate {
+    
+    _pickerDate = pickerDate;
+    
+    if ([self.datePickerDateType isEqualToString:@"showStartDatePicker"]) {
+        [self updateStartDateFilterSetting:pickerDate];
+    } else if ([self.datePickerDateType isEqualToString:@"showFinishDatePicker"]) {
+        [self updateFinishDateFilterSetting:pickerDate];
+    }
+    
+}
 
 - (NSDictionary *)filterOptions {
     
@@ -101,7 +118,7 @@
 - (IBAction)startDateSwitchChanged:(id)sender {
 
     if ([sender isEqual:self.startDateSwitch]) {
-        [self updateStartDateFilterSetting];
+        [self updateStartDateFilterSetting:nil];
     }
 
 }
@@ -109,7 +126,7 @@
 - (IBAction)finishDateSwitchChanged:(id)sender {
 
     if ([sender isEqual:self.finishDateSwitch]) {
-        [self updateFinishDateFilterSetting];
+        [self updateFinishDateFilterSetting:nil];
     }
 
 }
@@ -145,14 +162,6 @@
     
 }
 
-- (IBAction)startDateFilterPressed:(id)sender {
-    // show date picker
-}
-
-- (IBAction)finishDateFilterPressed:(id)sender {
-    // show date picker
-}
-
 - (IBAction)completionMinChanged:(id)sender {
     
     if ([sender isEqual:self.completionMinSlider]) {
@@ -167,6 +176,37 @@
         [self updateCompletionMaxFilterSetting];
     }
 
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if (![segue.destinationViewController isKindOfClass:[DatePickerVC class]]) return;
+    
+    self.datePickerDateType = segue.identifier;
+    DatePickerVC *datePickerVC = (DatePickerVC *)segue.destinationViewController;
+    
+    NSString *keyPath = nil;
+    NSDate *value = nil;
+    
+    if ([self.datePickerDateType isEqualToString:@"showStartDatePicker"]) {
+        
+        keyPath = @"startDate";
+        value = [[self dateFormatter] dateFromString:self.startDateValueButton.titleLabel.text];
+        
+    } else if ([self.datePickerDateType isEqualToString:@"showFinishDatePicker"]) {
+        
+        keyPath = @"finishDate";
+        value = [[self dateFormatter] dateFromString:self.finishDateValueButton.titleLabel.text];
+        
+    }
+    
+    if (!keyPath) return;
+    
+    datePickerVC.minDate = [[self events] valueForKeyPath:[@"@min." stringByAppendingString:keyPath]];
+    datePickerVC.maxDate = [[self events] valueForKeyPath:[@"@max." stringByAppendingString:keyPath]];
+    datePickerVC.date = value;
+    datePickerVC.owner = self;
+    
 }
 
 
@@ -198,9 +238,10 @@
 
 }
 
-- (void)updateStartDateFilterSetting {
+- (void)updateStartDateFilterSetting:(NSDate *)date {
     
-    NSDictionary *settingValue = @{FILTER_STATE: @(self.startDateSwitch.on)};
+    NSMutableDictionary *settingValue = @{FILTER_STATE: @(self.startDateSwitch.on)}.mutableCopy;
+    settingValue[FILTER_VALUE] = date ? date : [[self dateFormatter] dateFromString:self.startDateValueButton.titleLabel.text];
     
     [self updateSetting:FILTER_STARTDATE
               withValue:settingValue];
@@ -209,10 +250,12 @@
 
 }
 
-- (void)updateFinishDateFilterSetting {
+- (void)updateFinishDateFilterSetting:(NSDate *)date {
 
-    NSDictionary *settingValue = @{FILTER_STATE: @(self.finishDateSwitch.on)};
-    
+    NSMutableDictionary *settingValue = @{FILTER_STATE: @(self.finishDateSwitch.on)}.mutableCopy;
+    NSDate *value = date ? date : [[self dateFormatter] dateFromString:self.finishDateValueButton.titleLabel.text];
+    settingValue[FILTER_VALUE] = value;
+
     [self updateSetting:FILTER_FINISHDATE
               withValue:settingValue];
     

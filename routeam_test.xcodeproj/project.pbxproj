@@ -108,6 +108,7 @@
 		2CBD48781FD3410100C9BCF2 /* FilterHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FilterHelper.m; sourceTree = "<group>"; };
 		2CBD487A1FD3FF9500C9BCF2 /* DatePickerVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DatePickerVC.h; sourceTree = "<group>"; };
 		2CBD487B1FD3FF9500C9BCF2 /* DatePickerVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DatePickerVC.m; sourceTree = "<group>"; };
+		2CBD487D1FD4011200C9BCF2 /* DatePickerOwner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DatePickerOwner.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +262,7 @@
 				2CBD48511FD148D700C9BCF2 /* FilterOptionsVC.m */,
 				2CBD487A1FD3FF9500C9BCF2 /* DatePickerVC.h */,
 				2CBD487B1FD3FF9500C9BCF2 /* DatePickerVC.m */,
+				2CBD487D1FD4011200C9BCF2 /* DatePickerOwner.h */,
 			);
 			path = Views;
 			sourceTree = "<group>";

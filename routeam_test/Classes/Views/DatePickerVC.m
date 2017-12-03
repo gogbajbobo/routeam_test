@@ -19,6 +19,11 @@
 @implementation DatePickerVC
 
 - (IBAction)datePickerValueChanged:(id)sender {
+    
+    if ([sender isEqual:self.datePicker]) {
+        self.owner.pickerDate = self.datePicker.date;
+    }
+    
 }
 
 - (IBAction)doneButtonPressed:(id)sender {
@@ -28,11 +33,23 @@
     
 }
 
+- (void)setupDatePicker {
+    
+    self.datePicker.datePickerMode = UIDatePickerModeDate;
+    if (self.minDate) self.datePicker.minimumDate = self.minDate;
+    if (self.maxDate) self.datePicker.maximumDate = self.maxDate;
+    if (self.date) self.datePicker.date = self.date;
+    
+}
+
 
 #pragma mark - view lifecycle
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    [self setupDatePicker];
+    
 }
 
 - (void)didReceiveMemoryWarning {

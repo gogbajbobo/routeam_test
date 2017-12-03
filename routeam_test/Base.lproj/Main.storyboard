@@ -207,7 +207,6 @@
                                 </constraints>
                                 <state key="normal" title="Start date filter value"/>
                                 <connections>
-                                    <action selector="startDateFilterPressed:" destination="bTf-y5-6RY" eventType="touchUpInside" id="UC0-ZP-D4i"/>
                                     <segue destination="AcI-3C-X9H" kind="popoverPresentation" identifier="showStartDatePicker" popoverAnchorView="Uas-NV-0sz" id="10d-5s-0gf">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                     </segue>
@@ -232,7 +231,6 @@
                                 </constraints>
                                 <state key="normal" title="Finish date filter value"/>
                                 <connections>
-                                    <action selector="finishDateFilterPressed:" destination="bTf-y5-6RY" eventType="touchUpInside" id="bLp-m6-gv6"/>
                                     <segue destination="AcI-3C-X9H" kind="popoverPresentation" identifier="showFinishDatePicker" popoverAnchorView="P26-zJ-wYB" id="PuA-cw-akG">
                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES"/>
                                     </segue>
