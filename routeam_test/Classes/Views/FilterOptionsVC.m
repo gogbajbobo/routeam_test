@@ -165,7 +165,10 @@
 - (IBAction)completionMinChanged:(id)sender {
     
     if ([sender isEqual:self.completionMinSlider]) {
+        
+        self.completionMinSlider.value = floor(self.completionMinSlider.value * 100) / 100;
         [self updateCompletionMinFilterSetting];
+        
     }
 
 }
@@ -173,7 +176,10 @@
 - (IBAction)completionMaxChanged:(id)sender {
     
     if ([sender isEqual:self.completionMaxSlider]) {
+        
+        self.completionMaxSlider.value = floor(self.completionMaxSlider.value * 100) / 100;
         [self updateCompletionMaxFilterSetting];
+        
     }
 
 }
@@ -392,7 +398,10 @@
     self.completionMinLabel.text = [NSString stringWithFormat:@"%@ %@", FILTER_COMPLETION_MIN, [[self numberFormatter] stringFromNumber:@(sliderValue)]];
     
     if (sliderValue > self.completionMaxSlider.value) {
-#warning - change completionMaxSlider.value
+        
+        self.completionMaxSlider.value = sliderValue;
+        [self updateCompletionMaxFilterSetting];
+        
     }
 
 }
@@ -410,7 +419,10 @@
     self.completionMaxLabel.text = [NSString stringWithFormat:@"%@ %@", FILTER_COMPLETION_MAX, [[self numberFormatter] stringFromNumber:@(sliderValue)]];
 
     if (sliderValue < self.completionMinSlider.value) {
-#warning - change completionMinSlider.value
+        
+        self.completionMinSlider.value = sliderValue;
+        [self updateCompletionMinFilterSetting];
+        
     }
 
 }
