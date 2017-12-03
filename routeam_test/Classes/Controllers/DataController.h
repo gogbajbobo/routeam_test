@@ -20,5 +20,7 @@
 
 + (UIManagedDocument *)document;
 
++ (void)getEventsDataWithCompletionHandler:(void (^)(BOOL success, NSArray <NSDictionary *> *data))completionHandler;
+
 
 @end

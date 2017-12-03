@@ -114,9 +114,7 @@
     
     [[NSNotificationCenter defaultCenter] postNotificationName:DOCUMENT_READY_NOTIFICATION
                                                         object:self.document];
-    
-    [DataController checkEventsData];
-    
+
 }
 
 - (void)documentNotReady:(UIManagedDocument *)document {
@@ -130,37 +128,13 @@
     return [DataController sharedController].document.managedObjectContext;
 }
 
-+ (void)checkEventsData {
-    
-    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass([Event class])];
-    NSError *error = nil;
-    
-    NSUInteger eventsCount = [[self context] countForFetchRequest:request
-                                                            error:&error];
-    
-    if (!eventsCount) {
-        [self requestEventsData];
-    }
-    
-}
-
-+ (void)requestEventsData {
-    
-    [self getEventsDataWithCompletionHandler:^(BOOL success, NSArray <NSDictionary *> *data) {
-        
-        if (!success) return;
-        [self handleEventsData:data];
-        
-    }];
-    
-}
-
 + (void)getEventsDataWithCompletionHandler:(void (^)(BOOL success, NSArray <NSDictionary *> *data))completionHandler {
     
     NSArray <NSDictionary *> *returnData = [self eventsData];
-    BOOL success = YES;
+    [self handleEventsData:returnData];
     
-    completionHandler(success, returnData);
+    BOOL success = YES;
+    if (completionHandler) completionHandler(success, returnData);
     
 }
 

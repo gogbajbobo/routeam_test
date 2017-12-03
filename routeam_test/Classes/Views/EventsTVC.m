@@ -79,6 +79,8 @@
 
 - (void)fetchEvents {
     
+    if (!self.context) return;
+    
     self.resultsController = nil;
     
     NSError *error;
@@ -95,10 +97,15 @@
     
     if ([notification.object isKindOfClass:[UIManagedDocument class]]) {
         
-        UIManagedDocument *document = (UIManagedDocument *)notification.object;
-        self.context = document.managedObjectContext;
-        [self fetchEvents];
-        [self.spinner removeFromSuperview];
+        [DataController getEventsDataWithCompletionHandler:^(BOOL success, NSArray<NSDictionary *> *data) {
+            
+            if (!success) return;
+            UIManagedDocument *document = (UIManagedDocument *)notification.object;
+            self.context = document.managedObjectContext;
+            [self fetchEvents];
+            [self.spinner removeFromSuperview];
+
+        }];
         
     }
     
@@ -123,11 +130,8 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
-    
-    if (self.context) {
-        [self fetchEvents];
-    }
-    
+    [self fetchEvents];
+
 }
 
 - (void)viewDidLoad {
