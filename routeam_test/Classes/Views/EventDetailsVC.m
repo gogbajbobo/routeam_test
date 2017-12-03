@@ -42,7 +42,23 @@
     self.name.text = self.event.name;
     self.startTime.text = [self.event startDateString];
     self.finishTime.text = [self.event finishDateString];
-    self.type.text = @"have to fill type";
+
+    EventType type = self.event.type.integerValue;
+    switch (type) {
+        case EventTypeUnits:
+            self.type.text = @"Completion by units";
+            break;
+        case EventTypeSum:
+            self.type.text = @"Completion by sum";
+            break;
+        case EventTypeNames:
+            self.type.text = @"Completion by names";
+            break;
+        default:
+            self.type.text = @"Completion by none";
+            break;
+    }
+
     self.completion.text = [self.event completionText];
     self.info.text = self.event.info;
  
