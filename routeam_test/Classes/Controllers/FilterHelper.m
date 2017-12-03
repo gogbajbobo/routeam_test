@@ -39,7 +39,7 @@
     
     if ([filterKey isEqualToString:FILTER_TYPE]) {
         return [NSPredicate predicateWithFormat:@"type == %@", filterValue];
-    } else if ([filterKey isEqualToString:FILTER_NAME]) {
+    } else if ([filterKey isEqualToString:FILTER_NAME] && ![filterValue isEqualToString:@""]) {
         return [NSPredicate predicateWithFormat:@"name contains[cd] %@", filterValue];
     } else if ([filterKey isEqualToString:FILTER_STARTDATE]) {
         return [NSPredicate predicateWithFormat:@"startDate >= %@", filterValue];
@@ -50,9 +50,9 @@
     } else if ([filterKey isEqualToString:FILTER_COMPLETION_MAX]) {
         return [NSPredicate predicateWithFormat:@"completion <= %@", filterValue];
     }
-    
-    return nil;
-    
+
+    return [NSPredicate predicateWithFormat:@"1 == 1"];
+
 }
 
 
