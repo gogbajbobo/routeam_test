@@ -148,7 +148,7 @@
         [self handleParticipant:participant withEventId:eventId];
     }];
     
-    NSLog(@"%@ participants for event #%@", @(participants.count), eventId);
+//    NSLog(@"%@ participants for event #%@", @(participants.count), eventId);
     
     NSMutableDictionary *returnData = @{@"event": event,
                                         @"participants": participants
