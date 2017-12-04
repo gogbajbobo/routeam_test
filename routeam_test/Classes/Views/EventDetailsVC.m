@@ -11,6 +11,7 @@
 #import "DataController.h"
 #import "DataModel.h"
 #import "ParticipantsTVC.h"
+#import "SpinnerView.h"
 
 
 @interface EventDetailsVC ()
@@ -24,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *info;
 
 @property (nonatomic, strong) Event *event;
+@property (nonatomic, strong) SpinnerView *spinner;
 
 
 @end
@@ -71,6 +73,9 @@
 
 - (void)fetchEventDetailData {
 
+    self.spinner = [SpinnerView spinnerViewWithFrame:self.view.frame];
+    [self.view addSubview:self.spinner];
+
     [DataController getDetailDataForEventId:self.eventId withCompletionHandler:^(BOOL success, NSDictionary *data) {
         
         if (success) {
@@ -87,6 +92,8 @@
             if (self.event) [self showEventData];
             
         }
+        
+        [self.spinner removeFromSuperview];
         
     }];
 
